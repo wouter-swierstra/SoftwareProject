@@ -644,13 +644,13 @@ We ignore risks all the time:
 
 # Risk management strategy
 
-1. Identify risk
+1. *Identify risk* – to which risks are you exposed?
 
-1. Determine exposure (the combination of probability and effect).
+1. *Determine exposure* – what are the likelihood and consequences associated with these risks?
 
-1. Develop strategies to mitigate risk.
+1. *Risk planning* – which strategies can you identify to mitigate risks?
 
-1. Handle risk.
+1. *Monitor risks* – how will you assess the risks that arise during the project?
 
 --------------------------------------------------------------------------------
 
@@ -710,164 +710,71 @@ These factors help determine what stories to address.
 
 --------------------------------------------------------------------------------
 
-# Eerste deliverable
+# Strategies for dealing with risk
 
-Volgende week dinsdag moeten jullie een korte presentatie geven van
-het *software development methodology* die jullie gaan gebruiken.
+* Avoidance – use technology you already know.
 
-- Wat voor afspraken hebben jullie al gemaakt?
-- Hoe gaan jullie plannen?
-- Welke rol speelt iedereen in het team?
+* Minimization – share code ownership to avoid stagnation when one person is ill.
+
+* Contingency plans – how can we reduce the scope of the project, if we realise we cannot finish on time.
+
+--------------------------------------------------------------------------------
+
+# Planning
+
+--------------------------------------------------------------------------------
+
+# Your project plan
+
+1. Introduction: describe objectives and constraints
+
+1. Project organisation: describe methodology and roles.
+
+1. Risk analysis: describe risks, exposure, and mitigation strategies.
+
+1. Work breakdown: describe activities, milestones, deliverables.
+
+1. Project schedule: describe dependencies between activities, time estimation for milestones, and allocates people to activities.
+
+1. Monitoring & reporting: describe how you will check progress.
+
+--------------------------------------------------------------------------------
+
+# Eerste deliverable - I
+
+Volgende week dinsdag moeten jullie een korte presentatie geven van jullie *project plan*.
+
+Daarbij moeten een aantal zaken aan bod komen.
+
+--------------------------------------------------------------------------------
+
+# Eerste deliverable - Context 
+
+- Wat voor project gaan jullie doen?
 - Wat zijn de karakteristieken van jullie project?
-- Welke requirements kennen jullie al?
-- Is de verzameling requirements al volledig?
+- Wat zijn de constraints en objectives?
+- Waar zitten de risico's? Hoe gaan jullie daar mee om?
+- Hebben jullie al concrete milestones & deliverables?
+
+--------------------------------------------------------------------------------
+
+# Eerste deliverable - Requirements & methodology
+
+- Welke requirements kennen jullie al? Is deze verzameling compleet?
 - Wat is de verwachting over hoe veel er nog veel zal veranderen in het project?
-- In wat voor omgeving wordt het project ontwikkeld?
 - Welke software development methodology past hierbij?
+- **Waarom doen jullie het zo?**
 
 --------------------------------------------------------------------------------
 
 # Coming weeks
 
+* You need to start thinking about your methodology.
+
+- **Motivate your choice**
+
 * Requirements
 
 * Software architecture
 
-* You need to start to think about the methodology that will work for you.
 
-
-# People management & organization
-
-How do people organize themselves in a team?
-
-People can have different goals and roles to play.
-
-There's a lot of theory about team organization.
-
-I want to focus on some examples from software development.
-
---------------------------------------------------------------------------------
-
-# Hierarchical software development
-
-\begin{center}
-\includegraphics[scale=0.3]{img/hierarchy.pdf}
-\end{center}
-
---------------------------------------------------------------------------------
-
-# Chief programmer
-
-\begin{center}
-\includegraphics[scale=0.45]{img/chief-programmer.png}
-\end{center}
-
---------------------------------------------------------------------------------
-
-# Open source software development
-
-\begin{center}
-\includegraphics[scale=0.4]{img/open-source.png}
-\end{center}
-
---------------------------------------------------------------------------------
-
-# Skilled workers
-
-\begin{center}
-\includegraphics[scale=0.4]{img/skilled-workers.png}
-\end{center}
-
---------------------------------------------------------------------------------
-
-# Agile
-
-\begin{center}
-\includegraphics[scale=0.2]{img/agile.pdf}
-\end{center}
-
---------------------------------------------------------------------------------
-
-# General rules
-
-* A good team is crucial–look for balance.
-
-* A small team with high-quality developers is a lot more effective
-  than a big team with mediocre developers.
-
-* Avoid the Peter Principle: find the right person for the job.
-
-* If someone doesn't fit on the team, remove them.
-
---------------------------------------------------------------------------------
-
-# On people management
-
-There are lots of different ways to organize a team–find what works
-  well for you.
-
---------------------------------------------------------------------------------
-
-
-
-# Component-based software 
-
-* Decompose a system into loosely coupled components
-
-* These components encapsulate their implementation, but expose an interface.
-
-* Works well for domains that are understood well:
-    - a webshop;
-    - content management system;
-    - ...
-
-* Limited flexibility and lots of reliance on third parties.
-
---------------------------------------------------------------------------------
-# The right paradigm for you
-
-* Waterfall model can work well if you know the domain of application thoroughly
-
-* Iterative development allows you to feel your way into the domain, but also helps in the presence of users not knowing what they want
-
-- *Agile development is probably a good choice for a
-  small team of developers* **like you**
-
---------------------------------------------------------------------------------
-
-# Finally
-
-* Project Planning and control
-
-* People management
-
---------------------------------------------------------------------------------
-
-# Planning and control
-
-Distinguish between different variables:
-
-- **irregular variables** - the things you cannot control (user experience);
-
-- **goal variables** - things you want to achieve (low downtime, quick delivery);
-
-- **control variables** - things that can be varied (staffing, technology used)
-
-The distinction is not always so clear.
-
-Your job: how to choose control variables to reach your goal?
-
---------------------------------------------------------------------------------
-
-# Uncertainty
-
-- **Product certainty** - knowing what do build. Do you have a clear
-    set of requirements? Or do your customers keep changing their minds?
-
-- **Process certainty** - knowing about all the control variables
-    involved. How well do you know the tools that you will use?
-
-- **Resource certainty** - knowing about the availability of qualified
-    personnel.
-
---------------------------------------------------------------------------------
