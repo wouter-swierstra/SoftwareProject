@@ -748,7 +748,7 @@ Daarbij moeten een aantal zaken aan bod komen.
 
 --------------------------------------------------------------------------------
 
-# Eerste deliverable - Context 
+# Context 
 
 - Wat voor project gaan jullie doen?
 - Wat zijn de karakteristieken van jullie project?
@@ -758,12 +758,33 @@ Daarbij moeten een aantal zaken aan bod komen.
 
 --------------------------------------------------------------------------------
 
-# Eerste deliverable - Requirements & methodology
+# Requirements & methodology
 
 - Welke requirements kennen jullie al? Is deze verzameling compleet?
 - Wat is de verwachting over hoe veel er nog veel zal veranderen in het project?
 - Welke software development methodology past hierbij?
 - **Waarom doen jullie het zo?**
+
+--------------------------------------------------------------------------------
+
+# Further reading
+
+--------------------------------------------------------------------------------
+
+
+![left](img/sommerville.jpg)
+
+## Ian Sommerville
+
+## Software Engineering
+
+--------------------------------------------------------------------------------
+
+![left](img/van-vliet.jpg)
+
+## Hans van Vliet
+
+## Software Engineering
 
 --------------------------------------------------------------------------------
 
@@ -776,5 +797,4 @@ Daarbij moeten een aantal zaken aan bod komen.
 * Requirements
 
 * Software architecture
-
 
