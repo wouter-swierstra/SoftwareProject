@@ -1,36 +1,13 @@
 
 
-1.
+1. Intro, Marshmallow, Agile
 
-    * Introduction to the Software Project
+1. Risks, requirements, planning, architecture intro
 
-    * Marshmallow challenge
+1. More architecture?
 
-    * Iterative planning
+1. SCM, version control, working effectively with git
 
-1. 
+1. SCM build management (Make & Visual Studio), Bash scripting
 
-    * Risk
-
-    * Requirements
-
-    * Intro architecture
-
-
-1.
-
-    * More architecture
-
-* slides04
-
-    * SCM version control
-
-* slides05
-
-    * SCM build management (Make & Visual Studio)
-
-    * Bash scripting
-
-* slides06
-
-    * Testing
+1. Testing, theory & practice, TDD
