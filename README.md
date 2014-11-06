@@ -1,20 +1,25 @@
 
 
-* slides01
+1.
 
     * Introduction to the Software Project
 
-    * Software development methodologies
+    * Marshmallow challenge
 
-    * Planning and risk mitigation
+    * Iterative planning
 
-* slides02 & slides03
+1. 
+
+    * Risk
 
     * Requirements
 
-    * Software quality metrics
+    * Intro architecture
 
-    * Software architecture
+
+1.
+
+    * More architecture
 
 * slides04
 
