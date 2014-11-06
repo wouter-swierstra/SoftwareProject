@@ -9,48 +9,55 @@ slidenumbers: true
 
 --------------------------------------------------------------------------------
 
-#So you think you can program...
+# So you think you can program...
+
+^ You have done Imperative programming and MSO
 
 --------------------------------------------------------------------------------
 
-# You will learn:
+# Intended learning outcomes
 
-- to work in team
+At the end of this course, you should be able to
 
-- to build a serious application
+- work in team
 
-- to interact with customers
+- interact with customers
 
-- to apply software engineering techniques
+- translate customer requirements to a working product
 
---------------------------------------------------------------------------------
-
-#Which is more important in a Computer Science degree: 
-
-<br>
-
-##Theory or Practice?
-
-^ What we try to achieve at the UU
+- plan and develop a software application
 
 --------------------------------------------------------------------------------
 
-# Best of both worlds
+# Theory & practice
 
-- you learn about the *theory* of software development in various
-  courses you take;
+- You have learned about the *theory* of software development in various courses you take;
 
-- the software project gives you a valuable opportunity to put these ideas into practice.
+- The software project gives you a valuable opportunity to put these ideas into practice.
 
 These lectures try to bridge the gap by providing practical advice for your project.
 
 --------------------------------------------------------------------------------
 
+# What would you like to learn?
+
+![fit](img/question.jpg)
+
+^ You've seen programming in IMP
+
+^ You've seen design in MSO
+
+^ What is left to learn? Where are your blind spots?
+
+--------------------------------------------------------------------------------
+
 # Topics covered
+
+Different parts of software engineering:
 
 * Software project management
 
-* Software architecture
+* Software requirements & architecture 
 
 * Software development
 
@@ -64,65 +71,125 @@ These lectures try to bridge the gap by providing practical advice for your proj
 
 - How to identify risk?
 
-- Present and document your choice of a particular software
-  project management philosophy.
+- Present and document your choice of a particular software project management methodology.
 
 --------------------------------------------------------------------------------
 
-# Architecture and engineering
+# Software Requirements & Architecture 
 
-- Requirements engineering
+- How do I elicit and specify requirements?
 
-- Quality attributes
+- What non-functional requirements can I identify?
 
-- Software architecture
+- What is software architecture?
 
-- How they relate?
+- How do risks and quality attributes influence my architecture?
 
-- Present and document your choice of software architecture
-
---------------------------------------------------------------------------------
-
-# Software development
-
-* Version control
-
-* Build tools
-
-* Deployment
-
-* Testing
-
-* Present and document your testing plan
+- Present and document the software architecture of your project.
 
 --------------------------------------------------------------------------------
 
 # Software development
 
-You have already had to work on small software practical exercises.
+* How can to use version control effectively?
 
-**Question:** How did you organize and plan the development?
+* How to deploy software automatically? Or script the build process?
+
+* How to test complex software effectively?
+
+* Present and document your testing plan.
 
 --------------------------------------------------------------------------------
 
-# Software development
+# The challenge in teaching this course
 
-You have already had to work on small software practical exercises.
+<br><br>
 
-**Question:** How did you organize and plan the development?
+How to teach **principles** without being  vague?
 
-How well do you think this scales to 5 developers? What about 10? Or 50?
+How to teach **skills** without being project-specific?
+
+--------------------------------------------------------------------------------
+
+# Software project management
+
+--------------------------------------------------------------------------------
+
+# How do you organize and plan development in your hobby projects, practical exercises, or work?
+
+![fit](img/question.jpg)
+
+^ You have already had to work on small software practical exercises.
+
+^ Or perhaps you have a job as a software developer.
+
+^ How well do you think this scales to 5 developers? What about 10?
+
+--------------------------------------------------------------------------------
+
+# De spekjes uitdaging
+
+![](img/01-spekjes.jpg)
+
+--------------------------------------------------------------------------------
+
+# Rules
+
+* Make a **freestanding structure**. It cannot be attached to the ceiling or other higher objects. No holding the structure.
+
+* I'll measure the distance from the table to the bottom of the marshmallow.
+
+* Feel free to break the spaghetti, tape, or rope. The marshmallow must remain intact.
+
+* You have 18 minutes.
+
+--------------------------------------------------------------------------------
+
+# Reflection
+
+^ The best team: what went well?
+
+^ Worse teams: what went wrong?
+
+^ How did you plan development?
+
+^ If I asked you to do the challenge again what would you do differently?
+
+--------------------------------------------------------------------------------
+
+# [The Marshmallow Challenge](https://www.youtube.com/watch?v=H0_yKBitO8M)
+
+--------------------------------------------------------------------------------
+
+# Reflection
+
+^ What did you learn?
+
+^ How might you apply these ideas to your projects?
+
+--------------------------------------------------------------------------------
+
+# What I hope to teach
+
+- The importance of **identifying risk**
+
+- **Iteratively refine** a working prototype
+
+- None of you are architects.
+
+^ Any other thoughts?
+
+--------------------------------------------------------------------------------
+
+# Software project management
 
 --------------------------------------------------------------------------------
 
 # The software development process
 
-The *software development process* is the set of activities that
-produce a piece of software:
+The *software development process* is the set of activities that produce a piece of software:
 
-- Requirements engineering;
-
-- Writing specifications;
+- Requirements engineering & writing specifications;
 
 - Analysis and design;
 
@@ -130,22 +197,14 @@ produce a piece of software:
 
 - Maintainance and evolution.
 
-- Process management activities: 
-    * feasibility studies
-    * planning
-    * risk analysis
-
 --------------------------------------------------------------------------------
+
 
 # Software development methods
 
-- A *software development method* is an organized way of
-constructing software – an 'algorithm' for software construction.
+- A *software development method* is an organized way of constructing software – an 'algorithm' for software development
 
-- *Idea:* documenting an approach will make success repeatable,
-projects (cost-)effective, and results predictable.
-
-- Example: the Rational Unified Process.
+- *Idea:* documenting an approach will make success repeatable, projects (cost-)effective, and results predictable.
 
 --------------------------------------------------------------------------------
 
@@ -153,36 +212,35 @@ projects (cost-)effective, and results predictable.
 
 A development method typically documents:
 
-- What views of the system should be described? UML class
-      diagrams? Sequence diagrams? Data-flow models?
+- What views of the system should be described? UML class diagrams? Sequence diagrams? Data-flow models?
 
-- Best practice heuristics for specification, design, and construction
+- Best practice heuristics for specification, design, and construction.
 
 - Description of the activities involved in development and how these should be organized and planned.
 
 --------------------------------------------------------------------------------
 
-# Software development methods
+![fit](img/question.jpg)
 
-- Most companies have their own methodology.
-
-    - typically tailored to their needs and existing processes
-
-    - but based on established techniques
-
-- All these methods are usually based on some combination of *software development paradigms* or frameworks.
+# What software development methods have you heard of?
 
 --------------------------------------------------------------------------------
 
-# Domain vs methods
+![fit](img/question.jpg)
 
-Different application domains call for different methods:
+# Which have you actually used?
 
-* a cloud-based Software-as-a-Service
-    - instant updates
-    - easy to develop incrementally
-* a hardware design
-    - impossible to push patches after production
+--------------------------------------------------------------------------------
+
+# Knowing versus doing
+
+Many of you may know the *theory* behind structured software development processes.
+
+But almost none have applied these ideas well.
+
+Delivering the right piece of working software on time is **hard**.
+
+^ Vector Fabrics experience
 
 --------------------------------------------------------------------------------
 
@@ -202,27 +260,33 @@ Finish each step, before proceeding to the next
 
 --------------------------------------------------------------------------------
 
-# Paradigms: Iterative & incremental 
+# Choices, choices, choices!
 
-* Multiple iterations of specification-development
+Wikipedia has a list of different [software development methods](http://en.wikipedia.org/wiki/Software_development_process)
 
-* Each iteration refines the system, adding new features
-
-* For example, the Rational Unified Process or Agile
+Which is best for you?
 
 --------------------------------------------------------------------------------
 
-# Structured versus Agile
+![fit](img/question.jpg)
 
-Some frameworks and methods are highly structured (e.g., RUP):
+# What are the characteristics of software projects?
 
-* Lots of documentation;
+--------------------------------------------------------------------------------
 
-* Clear processes and accountability;
+# The software project
 
-* Requirements form the basis of the development contract.
+* Limited resources: time, people, means.
 
-Agile software development takes a different approach...
+* Equally experienced developers
+
+* Committed customers; not many troublesome stakeholders
+
+* Typically, no huge existing codebase.
+
+--------------------------------------------------------------------------------
+
+# Agile/Scrum
 
 --------------------------------------------------------------------------------
 
@@ -252,7 +316,7 @@ Agile software development refers to a collection of software development method
 
 * and many others
 
-They are all inspired by the Agile Manifesto.
+They are all the Agile methods.
 
 --------------------------------------------------------------------------------
 
@@ -327,7 +391,7 @@ Take all the good characteristics of a smooth development process to the extreme
 
 * These items are completed in a single *iteration* (2 to 4 weeks)
 
-* ScrumMaster is responsible for managing the process, not the people.
+* The ScrumMaster is responsible for managing the process, not the people.
 
 --------------------------------------------------------------------------------
 
@@ -343,7 +407,7 @@ Take all the good characteristics of a smooth development process to the extreme
 
 --------------------------------------------------------------------------------
 
-![inline fill](img/agile.png)
+![inline fill](img/01-agile.png)
 
 --------------------------------------------------------------------------------
 
@@ -402,8 +466,9 @@ Daily meetings help coordinate developer activity.
 
 # The task board
 
-![inline](img/task_board.jpg)
+![inline](img/01-taskboard.jpg)
 
+Or digitally using tools like [Trello](https://trello.com/)
 
 --------------------------------------------------------------------------------
 
@@ -411,20 +476,34 @@ Daily meetings help coordinate developer activity.
 
 * When planning the iteration, every developer is assigned stories.
 
-* Each developer plans the implementation of this story:
+* Each developer plans the implementation of this story, and splits this into small tasks.
 
-    - Put content on bare HTML page;
-    - Add styling with a CSS file;
-    - Test across different browsers;
-    - Upload to webserver.
+* Each task goes on a post-it note.
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+## Story: Setup a homepage for the team.
+
+## What tasks can you identify?
+
+--------------------------------------------------------------------------------
+
+# Example tasks
+
+- Create GitHub repository & add collaborators.
+- Put content on bare HTML page.
+- Add styling with a CSS file.
+- Test across different browsers, operating systems, and devices.
+- Add links to social media.
+- Upload to webserver.
 
 --------------------------------------------------------------------------------
 
 # The task board - II
 
-* These steps include testing, deployment, etc.
-
-* All these steps go on post-it notes.
+* The tasks include testing, deployment, etc.
 
 * Each post-it has an estimated number of story points.
 
@@ -469,6 +548,12 @@ Daily meetings help coordinate developer activity.
 
 --------------------------------------------------------------------------------
 
+![fit](img/question.jpg)
+
+# What are the drawbacks of Agile development?
+
+--------------------------------------------------------------------------------
+
 # Agile/Scrum pitfalls
 
 * Don't add stories during the sprint.
@@ -481,81 +566,15 @@ Daily meetings help coordinate developer activity.
 
 * Prioritizing stories is hard.
 
---------------------------------------------------------------------------------
-
-# Case study: SMOI
-
-There is a module named SMOI, where participants play a Business Game.
-
-Every week, students submit their strategy for the current quarter.
-
-These are entered in a desktop tool, which computes the outcome of their actions. There are many different parameters that can be tweaked.
-
-The current desktop tool should be replaced by a webapp, used by both students and teachers.
-
---------------------------------------------------------------------------------
-
-# Further requirements
-
-* It should be easy to tweak various parameters, manually update student input data.
-
-* Both students and teachers should get feedback about how the students are doing.
-
-* The system should be highly configurable and secure.
-
-* Computing the quarterly results should be quick, not taking more than 15 seconds.
-
---------------------------------------------------------------------------------
-
-# How would you plan the development for this project?
-
---------------------------------------------------------------------------------
-
-# There is no right answer.
-
---------------------------------------------------------------------------------
-
-# What is the Minimal Viable Product?
-
-* A JavaScript frontend that allows students to submit one number.
-
-* A server that collects submissions and stores them in a database.
-
-* Teachers can view a list of submitted numbers.
-
---------------------------------------------------------------------------------
-
-# From prototype to product
-
-* Add security/logins.
-
-* Add more domain specific computations to the server.
-
-* Student submission consist of more than one number.
-
-* Generate feedback for students and teachers.
-
-* And lots more...
-
---------------------------------------------------------------------------------
-
-# Why would this work?
-
-First establish a complete architecture, eliminating *risk*.
-
-Give an early demo to the customer of the 'complete' system.
-
-Iteratively refine the implementation to add more features.
-
-**Pitfall:** This only works if you keep your code clean.
+* You are not experienced developers.
 
 --------------------------------------------------------------------------------
 
 # Teaching software development methods
 
-**Listening** to me talk about Agile software development is one thing.
+**Listening** to me talk about Agile software development easy.
 
-**Applying** the Agile philosophy  is another.
+**Applying** the Agile philosophy is not.
 
 In my experience, even smart people struggle to get this right.
 
@@ -583,218 +602,25 @@ You may have experience working with methodology – use this!
 
 # More information
 
-There is a lot of information about Agile & Scrum online:
+There is a lot of information about Agile & Scrum online.
 
 You don't need to use Scrum: find a method that works for you and implement it well. 
 
-**Planning & methodology may not be the biggest technical challenge in your project; but it has a huge impact on the final results**
+**Planning & methodology may not be the biggest technical challenge in your project; but it has a huge impact on the final results.**
 
 --------------------------------------------------------------------------------
 
 # My advice
 
-Plan at least four meetings to reflect on process and planning **now**.
+It doesn't matter which methodology you choose – you're probably going to implement it wrong anyhow.
+
+**Plan four meetings to reflect on process and planning now**.
 
 Identify what is going wrong.
 
 Improve in every iteration.
 
-It is hard to get right.
 
---------------------------------------------------------------------------------
 
-## Why did I propose to write a useless prototype?
 
-## It eliminates **risk**.
-
---------------------------------------------------------------------------------
-
-# Risk management
-
-Risk is determined by uncertainty and importance.
-
-We ignore risks all the time:
-
-- We will solve the problem on time;
-- We will finish every story in each iteration;
-- Requirements will be stable;
-- There will be no unexpected bugs.
-
---------------------------------------------------------------------------------
-
-# Top ten risk factors
-
-* Personnel shortfall
-* Unrealistic schedule/budget 
-* Wrong functionality 
-* Wrong user interface 
-* Goldplating - adding the wrong features
-
---------------------------------------------------------------------------------
-
-# Top ten risk factors
-
-* Requirements volatility
-* Bad external components - bad software 
-* Bad external tasks - bad subcontractors
-* Real-time shortfalls - bad performance 
-* Capability shortfalls - untried technology
-
---------------------------------------------------------------------------------
-
-# Risk management strategy
-
-1. *Identify risk* – to which risks are you exposed?
-
-1. *Determine exposure* – what are the likelihood and consequences associated with these risks?
-
-1. *Risk planning* – which strategies can you identify to mitigate risks?
-
-1. *Monitor risks* – how will you assess the risks that arise during the project?
-
---------------------------------------------------------------------------------
-
-# Risk scenario
-
-One software project had to develop software to help plan where to build a wind turbine park on see.
-
-They were responsible for the visualization; the actual calculation would be done by a third party.
-
-It was not ready yet...
-
-**Question:** What can you do to minimize risk?
-
---------------------------------------------------------------------------------
-
-# About risk
-
-As computer scientists, we are trained to focus on *technical risk*–
-
-* How to implement feature X? 
-
-* How to interface with system Y? 
-
-* How to call library Z?
-
-Sometimes the important risk is *not* in the technical part.
-
---------------------------------------------------------------------------------
-
-# Risk categories
-
-* Focus on areas where you have *high* control that are *very*
-  important.
-
-* Next deal with areas where you have high control, but are less
-  important: for instance, customer requirements, scope, etc.
-
-* Try not to focus on the other areas: your work will have little
-  impact.
-
---------------------------------------------------------------------------------
-
-# Planning & addressing risk 
-
-Even if you work using Agile, you still need to plan what to do each
-iteration.
-
-How should you do this?
-
-* Estimate the value of features
-
-* Estimate the cost of implementing features
-
-* Estimate what you will learn from implementing certain features
-
-These factors help determine what stories to address.
-
---------------------------------------------------------------------------------
-
-# Strategies for dealing with risk
-
-* Avoidance – use technology you already know.
-
-* Minimization – share code ownership to avoid stagnation when one person is ill.
-
-* Contingency plans – how can we reduce the scope of the project, if we realise we cannot finish on time.
-
---------------------------------------------------------------------------------
-
-# Planning
-
---------------------------------------------------------------------------------
-
-# Your project plan
-
-1. Introduction: describe objectives and constraints
-
-1. Project organisation: describe methodology and roles.
-
-1. Risk analysis: describe risks, exposure, and mitigation strategies.
-
-1. Work breakdown: describe activities, milestones, deliverables.
-
-1. Project schedule: describe dependencies between activities, time estimation for milestones, and allocates people to activities.
-
-1. Monitoring & reporting: describe how you will check progress.
-
---------------------------------------------------------------------------------
-
-# Eerste deliverable - I
-
-Volgende week dinsdag moeten jullie een korte presentatie geven van jullie *project plan*.
-
-Daarbij moeten een aantal zaken aan bod komen.
-
---------------------------------------------------------------------------------
-
-# Context 
-
-- Wat voor project gaan jullie doen?
-- Wat zijn de karakteristieken van jullie project?
-- Wat zijn de constraints en objectives?
-- Waar zitten de risico's? Hoe gaan jullie daar mee om?
-- Hebben jullie al concrete milestones & deliverables?
-
---------------------------------------------------------------------------------
-
-# Requirements & methodology
-
-- Welke requirements kennen jullie al? Is deze verzameling compleet?
-- Wat is de verwachting over hoe veel er nog veel zal veranderen in het project?
-- Welke software development methodology past hierbij?
-- **Waarom doen jullie het zo?**
-
---------------------------------------------------------------------------------
-
-# Further reading
-
---------------------------------------------------------------------------------
-
-
-![left](img/sommerville.jpg)
-
-## Ian Sommerville
-
-## Software Engineering
-
---------------------------------------------------------------------------------
-
-![left](img/van-vliet.jpg)
-
-## Hans van Vliet
-
-## Software Engineering
-
---------------------------------------------------------------------------------
-
-# Coming weeks
-
-* You need to start thinking about your methodology.
-
-- **Motivate your choice**
-
-* Requirements
-
-* Software architecture
 
