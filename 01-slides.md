@@ -55,7 +55,7 @@ These lectures try to bridge the gap by providing practical advice for your proj
 
 Different parts of software engineering:
 
-* Software project management
+* Software project management 
 
 * Software requirements & architecture 
 
@@ -63,7 +63,7 @@ Different parts of software engineering:
 
 --------------------------------------------------------------------------------
 
-# Software project management
+# Software project management (Scrum & Agile)
 
 - How to organize a team of developers?
 
@@ -71,7 +71,7 @@ Different parts of software engineering:
 
 - How to identify risk?
 
-- Present and document your choice of a particular software project management methodology.
+- Present your team structure, product backlog & risks.
 
 --------------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ Different parts of software engineering:
 
 - How do risks and quality attributes influence my architecture?
 
-- Present and document the software architecture of your project.
+- Present the software architecture of your project.
 
 --------------------------------------------------------------------------------
 
@@ -95,9 +95,11 @@ Different parts of software engineering:
 
 * How to deploy software automatically? Or script the build process?
 
-* How to test complex software effectively?
+* How to test complex software?
 
-* Present and document your testing plan.
+* What is test-driven development? Why is it important?
+
+* Present your QA methodology.
 
 --------------------------------------------------------------------------------
 
@@ -171,6 +173,8 @@ How to teach **skills** without being project-specific?
 
 # What I hope to teach
 
+<br><br><br>
+
 - The importance of **identifying risk**
 
 - **Iteratively refine** a working prototype
@@ -208,21 +212,11 @@ The *software development process* is the set of activities that produce a piece
 
 --------------------------------------------------------------------------------
 
-# Software development methods
-
-A development method typically documents:
-
-- What views of the system should be described? UML class diagrams? Sequence diagrams? Data-flow models?
-
-- Best practice heuristics for specification, design, and construction.
-
-- Description of the activities involved in development and how these should be organized and planned.
-
---------------------------------------------------------------------------------
-
 ![fit](img/question.jpg)
 
 # What software development methods have you heard of?
+
+^ Waterfall, RUP, Agile/Scrum
 
 --------------------------------------------------------------------------------
 
@@ -244,23 +238,9 @@ Delivering the right piece of working software on time is **hard**.
 
 --------------------------------------------------------------------------------
 
-# Software development paradigm: Waterfall
-
-1. Specification
-
-1. Design
-
-1. Implementation
-
-1. Verification
-
-1. Maintenance
-
-Finish each step, before proceeding to the next
-
---------------------------------------------------------------------------------
-
 # Choices, choices, choices!
+
+<br><br>
 
 Wikipedia has a list of different [software development methods](http://en.wikipedia.org/wiki/Software_development_process)
 
@@ -270,7 +250,7 @@ Which is best for you?
 
 ![fit](img/question.jpg)
 
-# What are the characteristics of software projects?
+# What are the characteristics of these software/gametech projects?
 
 --------------------------------------------------------------------------------
 
@@ -286,7 +266,7 @@ Which is best for you?
 
 --------------------------------------------------------------------------------
 
-# Agile/Scrum
+# Scrum
 
 --------------------------------------------------------------------------------
 
@@ -346,31 +326,6 @@ They are all the Agile methods.
 
 --------------------------------------------------------------------------------
 
-# Extreme programming - I
-
-Take all the good characteristics of a smooth development process to the extreme:
-
-* frequent releases with small deltas
-
-* full-time engagement with the customer
-
-* pair program all the time
-
-* collective ownership of the code
-
---------------------------------------------------------------------------------
-
-# Extreme programming - II
-
-* continuous integegration - compile, test, and deploy the whole
-  system all the time.
-
-* test-driven development - write unit tests first, then code that makes these tests pass.
-
-* do *not* anticipate future changes.
-
---------------------------------------------------------------------------------
-
 # The Scrum Framework
 
 - One popular approach organising an Agile development team.
@@ -379,35 +334,31 @@ Take all the good characteristics of a smooth development process to the extreme
 
 - Given the time frame and type of project, Scrum might be a good option for you.
 
-- More info at http://www.scrumalliance.org.
+--------------------------------------------------------------------------------
+
+# The Scrum team
+
+There are three roles in the Scrum:
+
+* The Product Owner
+
+* The Scrum Master
+
+* The Development team
+
+* (Your UU Supervisor)
 
 --------------------------------------------------------------------------------
 
-# The Scrum process - I
+# The Product Owner
 
-* A product owner creates a wishlist, called the *product backlog*
+The Product Owner is a single person representing all stakeholders:
 
-* The development team takes a small number of items from the top of the backlog: sprint backlog.
+- Helps prioritize the product backlog
+- Responsible for product vision
+- Prioritizes the Product Backlog
+- Accepts or rejects product increments
 
-* These items are completed in a single *iteration* (2 to 4 weeks)
-
-* The ScrumMaster is responsible for managing the process, not the people.
-
---------------------------------------------------------------------------------
-
-# The Scrum process - II
-
-* Every day meetings to assess progress
-
-* At the end of the sprint, the stories should be completely implemented. The product should be shippable.
-
-* Every iteration a sprint review: how to improve the next sprint.
-
-* Repeat.
-
---------------------------------------------------------------------------------
-
-![inline fill](img/01-agile.png)
 
 --------------------------------------------------------------------------------
 
@@ -417,17 +368,7 @@ The Scrum Master is responsible for making sure the process is smooth:
 
 - remove outside distractions;
 - chair review meetings or the daily standup;
-- but he is not a project manager.
-
---------------------------------------------------------------------------------
-
-# The Product Owner
-
-The Product Owner is a single person representing all stakeholders:
-
-- he helps prioritize the product backlog
-- writes (or has the team write) user stories
-- this could be your supervisor at the UU or external contact point
+- facilitates the process, without being a a project manager.
 
 --------------------------------------------------------------------------------
 
@@ -440,6 +381,35 @@ The Product Owner is a single person representing all stakeholders:
 
 --------------------------------------------------------------------------------
 
+
+# The Scrum process - I
+
+* Together with the product owner, you will create a 'wishlist of features', called the *product backlog*
+
+* The development team takes a small number of items from the top of the backlog: sprint backlog.
+
+* These items are completed in a single *iteration* (2 weeks)
+
+* The ScrumMaster is responsible for managing the process, not the people.
+
+--------------------------------------------------------------------------------
+
+# The Scrum process - II
+
+* Every day meetings to assess progress
+
+* At the end of the sprint, the stories should be completely implemented. There should be a shippable product increment ready.
+
+* Every iteration a sprint review: how to improve the next sprint.
+
+* Plan the next sprint and repeat.
+
+--------------------------------------------------------------------------------
+
+![inline fill](img/01-agile.png)
+
+--------------------------------------------------------------------------------
+
 # Standup meetings - I
 
 * Start each day with a stand-up meeting.
@@ -448,7 +418,7 @@ The Product Owner is a single person representing all stakeholders:
 
 * Everyone stands up – no sitting!
 
-* The meeting is timeboxed: 30 minutes max.
+* The meeting is timeboxed: 20 minutes max.
 
 --------------------------------------------------------------------------------
 
@@ -474,7 +444,7 @@ Or digitally using tools like [Trello](https://trello.com/)
 
 # The task board - I
 
-* When planning the iteration, every developer is assigned stories.
+* When planning the sprint, every developer is assigned stories.
 
 * Each developer plans the implementation of this story, and splits this into small tasks.
 
@@ -496,7 +466,7 @@ Or digitally using tools like [Trello](https://trello.com/)
 - Put content on bare HTML page.
 - Add styling with a CSS file.
 - Test across different browsers, operating systems, and devices.
-- Add links to social media.
+- Publish links on social media.
 - Upload to webserver.
 
 --------------------------------------------------------------------------------
@@ -505,14 +475,12 @@ Or digitally using tools like [Trello](https://trello.com/)
 
 * The tasks include testing, deployment, etc.
 
-* Each post-it has an estimated number of story points.
-
 * All the post-it notes of all stories go on a single board, together
   with the original story description.
 
 --------------------------------------------------------------------------------
 
-# The task board
+# The task board - III
 
 * All the stories and associated post-its are have their own row.
 
@@ -544,13 +512,7 @@ Or digitally using tools like [Trello](https://trello.com/)
     * What went well?
     * What can we do better?
 
-- Start planning the next iteration after the demo. Your demo should help your customers and Product Owner decide what they want to see next.
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# What are the drawbacks of Agile development?
+Start planning the next iteration after the demo. Your demo should help your customers and Product Owner decide what they want to see next.
 
 --------------------------------------------------------------------------------
 
@@ -572,7 +534,7 @@ Or digitally using tools like [Trello](https://trello.com/)
 
 # Teaching software development methods
 
-**Listening** to me talk about Agile software development easy.
+**Listening** to me talk about Scrum is easy.
 
 **Applying** the Agile philosophy is not.
 
@@ -602,25 +564,27 @@ You may have experience working with methodology – use this!
 
 # More information
 
-There is a lot of information about Agile & Scrum online.
+Lots of info available online:
 
-You don't need to use Scrum: find a method that works for you and implement it well. 
+* [http://www.scrumalliance.org](http://www.scrumalliance.org)
 
-**Planning & methodology may not be the biggest technical challenge in your project; but it has a huge impact on the final results.**
+* [http://scrummethodology.com/](http://scrummethodology.com/)
+
+* [http://www.mountaingoatsoftware.com/](http://www.mountaingoatsoftware.com/)
 
 --------------------------------------------------------------------------------
 
-# My advice
+# Learn more
 
-It doesn't matter which methodology you choose – you're probably going to implement it wrong anyhow.
+Free Scrum training videos:
 
-**Plan four meetings to reflect on process and planning now**.
+  [http://scrummethodology.com/](http://scrummethodology.com/)
 
-Identify what is going wrong.
+Check out the reference card:
 
-Improve in every iteration.
+  [http://scrumreferencecard.com/scrum-reference-card/](http://scrumreferencecard.com/scrum-reference-card/)
 
+--------------------------------------------------------------------------------
 
-
-
+##Planning & methodology may not be the biggest technical challenge in your project; but it has a **huge impact** on the final results.
 

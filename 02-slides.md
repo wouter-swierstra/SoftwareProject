@@ -3,7 +3,6 @@ slidenumbers: true
 
 
 # Software Project
-### Requirements
 ### Lecture 2
 
 ### Wouter Swierstra
@@ -16,17 +15,17 @@ slidenumbers: true
 
 * Marshmallow challenge
 
-* Agile software development
+* Scrum and Agile software development
 
 --------------------------------------------------------------------------------
 
 # Today
 
-## Requirements
+## Establishing a product backlog
 
-## Planning
+## Planning iterations
 
-## Risks
+## Identifying risks
 
 --------------------------------------------------------------------------------
 
@@ -135,7 +134,7 @@ FOR students at the Universiteit Utrecht WHO need to request books, extend loans
 
 # Establish a product backlog
 
-Sit down with the development team and your client.
+Sit down with the development team and the product owner.
 
 Everyone has a stack of notecards and a pen.
 
@@ -215,6 +214,16 @@ It **won't** adapt to a player's expertise.
 
 --------------------------------------------------------------------------------
 
+# Prioritizing the product backlog
+
+Some people argue that the product backlog must be linearly order – you must have a complete ranking of all stories.
+
+Personally, I think this is unrealistic and hard to maintain.
+
+A rough classification – M, S, C – is good enough.
+
+--------------------------------------------------------------------------------
+
 ![fit](img/question.jpg)
 
 # How would you classify the user stories you listed previously?
@@ -261,7 +270,89 @@ There is a lot of software available to help:
 
 * How can you transition from a blank slate to a working product?
 
+* How can you organize your scenarios into *milestones*?
+
 These are still open questions...
+
+--------------------------------------------------------------------------------
+
+# Case study: SMOI
+
+--------------------------------------------------------------------------------
+
+The Strategic Management of Organizations and ICT (SMOI) course runs a simulation game with teams of students.
+
+Each team submits an Excel file with lots of data, corresponding to strategic decisions they make for a certain quarter: how much beer to produce, where to ship their stocks, or how much to spend on advertising, etc.
+
+These Excel forms are processed manually by the lecturers. The results are communicated back to the students.
+
+Your task: build an online websystem to automate this process.
+
+--------------------------------------------------------------------------------
+
+# Further requirements
+
+* The students should be warned about bogus or invalid data.
+
+* The lecturers should be able to view all student data.
+
+* The system should be completely adaptable, so that it can be used for other simulation games.
+
+* The teams should have homepages that are customizable.
+
+* The system should support some notification/messaging system.
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# What would you do first? Why?
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+## But that's too much work for one iteration!
+
+## How could you make it smaller?
+
+--------------------------------------------------------------------------------
+
+# Splitting epics
+
+Scenarios that are too much work for one iteration are called *epics*.
+
+Typically, you can identify the most important next scenario easily.
+
+Split this into smaller pieces.
+
+Some of these pieces may be lower priority.
+
+--------------------------------------------------------------------------------
+
+# Planning: minimize customer unhappiness
+
+![inline](img/02-car1.png)
+
+![inline](img/02-car2.png)
+
+--------------------------------------------------------------------------------
+
+# Planning: minimize technical risk
+
+![inline](img/02-mona-lisa1.png)
+
+![inline](img/02-mona-lisa2.png)
+
+--------------------------------------------------------------------------------
+
+1 Fix architecture
+
+1 Break epics into pieces, sort pieces: good, better, best
+
+1 Minimal viable product
+
+1 Roadmap
 
 --------------------------------------------------------------------------------
 
@@ -377,9 +468,11 @@ Indexing is not cheap – logs were 15 minutes stale.
 
 # A hard truth
 
-You are not software architects.
+You are not a software architect.
 
-After this course you still will not be software architects.
+After this course, you will still not be software architect.
+
+After the course on Software Architecture, you will still not be a software architect.
 
 Come back in twenty years.
 
@@ -606,5 +699,7 @@ These stories go in the product backlog and are taken into account during the pl
 
 --------------------------------------------------------------------------------
 
+# Acknowledgements
 
+Some illustrations were taken from *User Story Mapping* by Jeff Paton
 
