@@ -57,9 +57,9 @@ Different parts of software engineering:
 
 * Software project management 
 
-* Software requirements & architecture 
+* Risk & architecture 
 
-* Software development
+* Collaborative software development
 
 --------------------------------------------------------------------------------
 
@@ -69,23 +69,19 @@ Different parts of software engineering:
 
 - How to plan development?
 
-- How to identify risk?
-
 - Present your team structure, product backlog & risks.
 
 --------------------------------------------------------------------------------
 
 # Software Requirements & Architecture 
 
-- How do I elicit and specify requirements?
-
-- What non-functional requirements can I identify?
+- How to identify risk?
 
 - What is software architecture?
 
 - How do risks and quality attributes influence my architecture?
 
-- Present the software architecture of your project.
+- Present the key risks and software architecture of your project.
 
 --------------------------------------------------------------------------------
 
@@ -129,21 +125,31 @@ How to teach **skills** without being project-specific?
 
 --------------------------------------------------------------------------------
 
-# De spekjes uitdaging
+# The marshmallow challenge
 
-![](img/01-spekjes.jpg)
+![](img/01-marshmallow.jpeg)
 
 --------------------------------------------------------------------------------
 
 # Rules
 
-* Make a **freestanding structure**. It cannot be attached to the ceiling or other higher objects. No holding the structure.
+Make a **freestanding structure** out of spaghetti, tape and string with the marshmallow on top.
+
+* It cannot be attached to the ceiling or other higher objects. No holding the structure.
 
 * I'll measure the distance from the table to the bottom of the marshmallow.
 
 * Feel free to break the spaghetti, tape, or rope. The marshmallow must remain intact.
 
+--------------------------------------------------------------------------------
+
+# Rules
+
 * You have 18 minutes.
+
+* Team with the highest structure wins the rest of the bag of marshmallows.
+
+* Any questions?
 
 --------------------------------------------------------------------------------
 
@@ -350,6 +356,32 @@ There are three roles in the Scrum:
 
 --------------------------------------------------------------------------------
 
+# The Scrum process - I
+
+* Together with the product owner, you will create a 'wishlist of features', called the *product backlog*
+
+* The development team takes a small number of items from the top of the backlog: sprint backlog.
+
+* These items are completed in a single *iteration* (2 weeks)
+
+--------------------------------------------------------------------------------
+
+# The Scrum process - II
+
+* Daily meetings to assess progress
+
+* At the end of the sprint, the stories should be completely implemented. There should be a shippable product increment ready.
+
+* Every iteration a sprint review: how to improve the next sprint.
+
+* Plan the next sprint and repeat.
+
+--------------------------------------------------------------------------------
+
+![inline fill](img/01-agile.png)
+
+--------------------------------------------------------------------------------
+
 # The Product Owner
 
 The Product Owner is a single person representing all stakeholders:
@@ -381,40 +413,13 @@ The Scrum Master is responsible for making sure the process is smooth:
 
 --------------------------------------------------------------------------------
 
-
-# The Scrum process - I
-
-* Together with the product owner, you will create a 'wishlist of features', called the *product backlog*
-
-* The development team takes a small number of items from the top of the backlog: sprint backlog.
-
-* These items are completed in a single *iteration* (2 weeks)
-
-* The ScrumMaster is responsible for managing the process, not the people.
-
---------------------------------------------------------------------------------
-
-# The Scrum process - II
-
-* Every day meetings to assess progress
-
-* At the end of the sprint, the stories should be completely implemented. There should be a shippable product increment ready.
-
-* Every iteration a sprint review: how to improve the next sprint.
-
-* Plan the next sprint and repeat.
-
---------------------------------------------------------------------------------
-
-![inline fill](img/01-agile.png)
-
---------------------------------------------------------------------------------
-
 # Standup meetings - I
 
 * Start each day with a stand-up meeting.
 
 * The stand up meeting is at a fixed time and location, regardless of if people are missing.
+
+* Pro-tip: set a repeating alarm on your cellphone.
 
 * Everyone stands up – no sitting!
 
@@ -520,7 +525,7 @@ Start planning the next iteration after the demo. Your demo should help your cus
 
 * Don't add stories during the sprint.
 
-* Don't solve problems during the scrum.
+* Don't solve problems during the standup.
 
 * Lots of deadlines means lots of chances to write bad code to meet a deadline, introducing *technical debt*.
 
@@ -588,3 +593,14 @@ Check out the reference card:
 
 ##Planning & methodology may not be the biggest technical challenge in your project; but it has a **huge impact** on the final results.
 
+--------------------------------------------------------------------------------
+
+# Scrum coaching
+
+Friday February 13th, Max Verhorst (IT consultant and Scrum coach at
+InfoSupport) will visit the University.
+
+You will have an hour long session with him to present your project,
+product backlog, and plans.
+
+Please sign up for a slot!

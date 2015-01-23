@@ -21,11 +21,11 @@ slidenumbers: true
 
 # Today
 
-## Establishing a product backlog
+<br><br><br>
 
-## Planning iterations
+* Establishing a product backlog
 
-## Identifying risks
+* Planning effectively
 
 --------------------------------------------------------------------------------
 
@@ -116,6 +116,8 @@ FOR students at the Universiteit Utrecht WHO need to request books, extend loans
 
 # Formulate such a vision for your product.
 
+^ Actually, this is the product owner's job. This is a good exercise to see if you're on the same page.
+
 ^ Where are the open questions?
 
 ^ What bits did you find hard to fill in?
@@ -138,7 +140,7 @@ Sit down with the development team and the product owner.
 
 Everyone has a stack of notecards and a pen.
 
-Write down scenarios on cards.
+Write down scenarios or *user stories* on cards.
 
 This forms your initial product backlog.
 
@@ -242,7 +244,7 @@ Upon completion you will have:
 
 * A shared vision of what you are going to build
 
-* A prioritized product backlog with scenarios
+* A prioritized product backlog with user stories
 
 --------------------------------------------------------------------------------
 
@@ -254,23 +256,23 @@ You **must** be disciplined about controlling your backlog.
 
 There is a lot of software available to help:
 
-* [EasyBacklog](https://easybacklog.com)
-
-* [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
+* [EasyBacklog](https://easybacklog.com) (recommended)
 
 * [GitHub issue tracker](http://www.position-absolute.com/articles/agile-workflow-with-github-issues/)
+
+* [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
 
 --------------------------------------------------------------------------------
 
 # What next?
 
-* How can you turn scenarios into software?
+* How can you turn stories into software?
 
-* Which *must-have scenario* should you implement first?
+* Which *must-have story* should you implement first?
 
 * How can you transition from a blank slate to a working product?
 
-* How can you organize your scenarios into *milestones*?
+* How can you organize your stories into *milestones*?
 
 These are still open questions...
 
@@ -318,23 +320,139 @@ Your task: build an online websystem to automate this process.
 
 --------------------------------------------------------------------------------
 
-# Splitting epics
+# Epics
 
-Scenarios that are too much work for one iteration are called *epics*.
+Stories that are too much work for one iteration are called *epics*.
 
-Typically, you can identify the most important next scenario easily.
+Typically, you can identify the most important next story easily.
 
-Split this into smaller pieces.
+Break this into smaller pieces.
 
 Some of these pieces may be lower priority.
 
 --------------------------------------------------------------------------------
 
-# Planning: minimize customer unhappiness
+# Not just epics
+
+Some of the stories in the product backlog may have problems:
+
+* Not be precisely defined. 
+
+* Too big.
+
+* Not ready to be implemented
+
+But they are prioritized!
+
+Part of *product backlog grooming* is defining these stories.
+
+--------------------------------------------------------------------------------
+
+# Product backlog
+<br><br>
+
+![inline](img/02-release-plan.png)
+
+Prioritized stories - divided into iterations
+$$ \qquad \qquad \qquad \qquad \qquad \qquad \qquad \qquad$$  Epics & low priority stories
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# How can you break the main SMOI story into smaller pieces?
+
+--------------------------------------------------------------------------------
+
+# Breaking epics
+
+- **Split** – break the epic into small stories.
+
+- **Stub** – make a stub implementation so that this story does not block development (a Database class that returns the same answer for every query)
+
+- **Spike** – an experiment to learn how to estimate, plan, or split a story (a toy database that runs on the production server)
+
+- **Time-box** – leave the story intact, but agree to spend a fixed amount of time on it.
+
+--------------------------------------------------------------------------------
+
+# Attributes of good stories
+
+**I**ndependent
+
+**N**egotiable
+
+**V**aluable
+
+**E**stimation
+
+**S**mall
+
+**T**estable
+
+--------------------------------------------------------------------------------
+
+# Attributes of good stories - I
+
+**I**ndependent: no dependencies; actionable; something you can get started on right away.
+
+**N**egotiable: stories are not requirements documents. You need to agree on what is and is not part of the story.
+
+Is it too big? Split it. Or perhaps focus on the main success story first, leaving error cases for later. Too small? Combine it with another story.
+
+Part known, part unknown? Plan accordingly.
+
+--------------------------------------------------------------------------------
+
+# Attributes of good stories - II
+
+**V**aluable: stories should add immediate value to customers, or at least produce visible results.
+
+What demo will you give to the product owner at the end of the iteration, showing that the story was a success?
+
+**E**stimable: you need to be able to estimate how much work the story will be. Do you have the technical knowledge to make an accurate estimate? Is the story clearly defined?
+
+--------------------------------------------------------------------------------
+
+# Attributes of good stories - III
+
+**S**mall: every iteration should have many small stories. This makes it more likely that your estimates will be accurate and reduces the risk of stories not being completed.
+
+**T**estable: upon completion, every story should have tests. This validates that it has been implemented succesfully and prevents future stories from breaking the new functionality.
+
+--------------------------------------------------------------------------------
+
+# Planning recap
+
+* What is the product backlog?
+
+* How to prioritize the product backlog?
+
+* What makes a good user story?
+
+Remaining questions
+
+* How should we choose which stories to do in the next iteration?
+
+* How should I plan 'the whole' project?
+
+--------------------------------------------------------------------------------
+
+# Planning: incremental development
 
 ![inline](img/02-car1.png)
 
 ![inline](img/02-car2.png)
+
+--------------------------------------------------------------------------------
+
+# Planning: incremental development
+
+Customers do not know what they want.
+
+By iteratively refining a working system you will hopefully converge on a product with which they are happy...
+
+... if you only deliver a working system towards the end of the project, you run the risk of building the wrong thing.
 
 --------------------------------------------------------------------------------
 
@@ -346,344 +464,104 @@ Some of these pieces may be lower priority.
 
 --------------------------------------------------------------------------------
 
-1 Fix architecture
+# Planning: minimize technical risk
 
-1 Break epics into pieces, sort pieces: good, better, best
+For this project, you will need to learn and apply technology with which you are not familiar.
 
-1 Minimal viable product
+This is a huge risk!
 
-1 Roadmap
+Try to have a complete system up and running as soon as possible, even if it only has a fraction of the features.
 
---------------------------------------------------------------------------------
-
-![right fit](img/02-software-architecture.jpg)
-
-###Just Enough Software Architecture
-#### A Risk-Driven Approach
+(More on this in the next lecture on software architecture)
 
 --------------------------------------------------------------------------------
 
 ![fit](img/question.jpg)
 
-# What is software architecture?
+## In the SMOI example, 
+## which stories would you tackle first?
 
 --------------------------------------------------------------------------------
 
-*The highest-level breakdown of a system into its parts; the decisions that are hard to change; there are multiple architectures in a system; what is architecturally significant can change over a system's lifetime; and, in the end, architecture boils down to whatever the important stuff is.*
+# Which stories this iteration?
 
-Martin Fowler's definition of Software Architecture
+This should give you some idea which *must-have* stories you should try to complete in the first iterations.
 
---------------------------------------------------------------------------------
+But how many can you deliver?
 
-*The fundamental organization of a system embodied in its components, their relationships to each other and to  the environment and the principles guiding its design and evolution*
-
-Software Architecture (IEEE 1471)
+And who will do what?
 
 --------------------------------------------------------------------------------
 
-# Example architecture: Rackspace
+# Planning poker
 
-Rackspace is a company that manages hosted email servers.
+All team members have a set of cards.
 
-Engineers must search log files to diagnose problems.
+Every team member chooses the card with the number of *story points*, estimating how much work a story will be.
 
-Rackspace developed three different versions of this tool.
+Unless there is a consensus, the people with the highest and lowest estimates motivate their choice.
 
---------------------------------------------------------------------------------
+Make new estimations until the team agrees.
 
-# Rackspace - I
-
-A shell script to ssh to each machine, and grep the mail log.
-
-Engineers can use different greps to perform different queries.
-
-As the number of searches increased, overhead became noticeable.
-
-It requires an engineer, rather than tech support to query the logs.
+![right fit](img/02-poker.png)
 
 --------------------------------------------------------------------------------
 
-# Rackspace - II
+# What are story points?
 
-Move logs off email servers and make it searchable by tech support through a web interface.
+People are really bad at accurate estimates.
 
-All logs collected on a central machine, and loaded into a database.
+One story point does not correspond to a fixed amount of work – instead they try to measure *relative effort*.
 
-Support techs can search the database through a web interface.
-
-The centralized server is constantly under heavy load, as it was constantly adding new entries.
-
-Slowdown and random failures, resulting in the loss of data.
-
+Keep stories small – between one and ten points.
 
 --------------------------------------------------------------------------------
 
-# Rackspace - III
+# Development velocity
 
-Log data saved into a distributed file system, spread over many machines, indexed in parallel.
+Measuring how many story points your team completes in an iteration, this gives you an indication of your *development velocity*.
 
-Three copies of everything, spread over different machines.
+Use your development velocity when planning stories for the next iteration.
 
-Capable of handling 140 gigabytes of data generated per day, six terabytes of data total.
-
-Queries over webinterface were fast and reliable.
-
-Indexing is not cheap – logs were 15 minutes stale.
+Don't bite off more than you can chew.
 
 --------------------------------------------------------------------------------
 
-![fit](img/question.jpg)
+# Planning: the big picture
 
-# What do these architectures share? What makes them different?
+Sometimes it can be helpful to establish a *user story map*.
 
-^ Quality attributes
-
-^ Scalability
-
-^ Modifiability
-
-^ Latency
-
-^ Usability
+![inline](img/02-map1.png)
 
 --------------------------------------------------------------------------------
 
-# Why should you care?
+# User story maps
 
-1. Software architecture is the skeleton of a system
+* Backbone (top column): how our people use our system
 
-1. Architecture influences quality attributes
+* The columns correspond to epics;
 
-1. Architecture is (mostly) orthogonal to functionality.
+* Each column has stories or features associated with the epic.
 
-1. Architecture constrains systems.
-
-^ Fixes overall structure. No best skeleton. Choose the right one for your project.
-
-^ Rackspace -- same functionality, different quality attributes.
-
-^ Your choice of architecture influences what the system can and cannot do.
+* Each row determines the features that will be in a certain release.
 
 --------------------------------------------------------------------------------
 
-# A hard truth
+# Put differently...
 
-You are not a software architect.
-
-After this course, you will still not be software architect.
-
-After the course on Software Architecture, you will still not be a software architect.
-
-Come back in twenty years.
+![inline](img/02-map2.png)
 
 --------------------------------------------------------------------------------
 
-# The good news
+# Planning: your milestones
 
-Your project is 'small enough' to do without a thoroughly thought out, fully-documented architecture.
+* Identify three milestones – what stories will be in these releases?
 
-But you need to **identify risks**...
+* Be careful to avoid dependencies, minimize technical risk, and incrementally deliver working software.
 
-... and take architectural decisions to minimize them.
+* Give these releases a name and deadline. Commit to them.
 
- --------------------------------------------------------------------------------
-
-# Risks
-
-**Risk** is determined by perceived probability and perceived impact.
-
-It is impossible to accurately estimate either factor.
-
-Instead use this to decide the risks on which to focus.
-
---------------------------------------------------------------------------------
-
-# Risk assessment for software projects
-
-* You have little experience working in a team;
-
-* You are exposed to unfamiliar technology;
-
-* You have to work in an unfamiliar domain;
-
-* Besides the project, you all have other courses, jobs, etc.
-
-You *cannot* change this, but you *can* act accordingly.
-
---------------------------------------------------------------------------------
-
-# Top ten risk factors
-
-* Personnel shortfall
-* Unrealistic schedule/budget 
-* Wrong functionality 
-* Wrong user interface 
-* Goldplating - adding the wrong features
-
---------------------------------------------------------------------------------
-
-# Top ten risk factors
-
-* Requirements volatility
-* Bad external components - bad software 
-* Bad external tasks - bad subcontractors
-* Real-time shortfalls - bad performance 
-* Capability shortfalls - untried technology
-
---------------------------------------------------------------------------------
-
-# But that won't happen to us.
-
---------------------------------------------------------------------------------
-
-# Risks: example
-
-In a recent project there was an outspoken student who strongly pushed technology X.
-
-When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
-
-^ Let's say X is Haskell.
-
---------------------------------------------------------------------------------
-
-# Risks: example
-
-In a recent project there was an outspoken student who strongly pushed technology X.
-
-When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
-
-This student abandoned the software project halfway through. The remaining students threw away their code and started from scratch.
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# What are the biggest risks that you have already identified?
-
---------------------------------------------------------------------------------
-
-# Backlog prioritization exercise
-
-You have your MoSCoW-ed user stories. Print out the Must-haves.
-
-Every team member gets 8 green and 4 red poker chips.
-
-Everyone assigns *green* poker chips to important stories and *red* chips to risky stories.
-
-Record this risk-value assessment in your product backlog.
-
---------------------------------------------------------------------------------
-
-# Where to start?
-
-Start with high-value stories.
-
-But should you focus on high-risk or low-risk stories?
-
---------------------------------------------------------------------------------
-
-# Where to start?
-
-Start with high-value stories.
-
-But should you focus on high-risk or low-risk stories?
-
-**High-risk stories have priority.**
-
---------------------------------------------------------------------------------
-
-# About risk
-
-As computer scientists, we are trained to focus on *technical risk*
-
-* How to implement feature X? 
-
-* How to interface with system Y? 
-
-* How to call library Z?
-
-Sometimes the important risk is *not* in the technical part.
-
-^ Example: restaurant-dating website
-
---------------------------------------------------------------------------------
-
-# Non-engineering risks
-
-* "The lead developer's hobbies are base-jumping and cage fighting."
-
-* "Senior VP hates our manager."
-
-* "The customer doesn't know what he wants."
-
-* "Bob and Alice refuse to work together."
-
---------------------------------------------------------------------------------
-
-# Quality attributes
-
-There are huge catalogs of *software quality attributes*, describing the non-functional properties of software systems.
-
-These are typically not documented in user stories.
-
-But your system does have non-functional requirements, with their associated *risk*.
-
-**Question:** What are the key non-functional requirements that you can identify? Which ones carry the highest risk?
-
---------------------------------------------------------------------------------
-
-# Planning & addressing risk 
-
-Even if you work using Agile, you still need to plan what to do each
-iteration.
-
-How should you do this?
-
-* Estimate the value of features
-
-* Estimate the cost of implementing features
-
-* Estimate what you will learn from implementing certain features
-
-These factors help determine what stories to address.
-
---------------------------------------------------------------------------------
-
-# Risk scenario
-
-One software project had to develop software to help plan where to build a wind turbine park on see.
-
-They were responsible for the visualization; the actual calculation would be done by a third party.
-
-It was not ready yet...
-
-What can you do to minimize risk?
-
-^ One solution: build a mock prototype that doesn't do any interesting calculation, but does fix the interface
-
---------------------------------------------------------------------------------
-
-# Strategies for dealing with risk
-
-* Avoidance – take precautions: buy more memory, hire consults,
-
-* Minimization – share code ownership to avoid stagnation when one person is ill; creating prototypes to demo to the customer.
-
-* Contingency plans – we accept this risk, but provide an alternative: how will we reduce the scope of the project, if we realise we cannot finish on time.
-
---------------------------------------------------------------------------------
-
-# Product backlog: beyond user stories
-
-Create stories for dealing with the risks you identify.
-
-* Build a prototype that does X.
-
-* Find the best technology to do Y.
-
-* ...
-
-These stories go in the product backlog and are taken into account during the planning of in every iteration.
+* Remember to deliver a working skeleton as soon as possible.
 
 --------------------------------------------------------------------------------
 
@@ -691,15 +569,21 @@ These stories go in the product backlog and are taken into account during the pl
 
 1. Create a (MoSCow) prioritized product backlog
 
-1. Identify the most valuable, most risky stories.
+1. Set-up software to manage your backlog.
 
-1. Look at the [lists of quality attributes](http://en.wikipedia.org/wiki/List_of_system_quality_attributes): which non-functional requirements are important to your project? How big is the associated risk? Write stories to handle risks.
+1. Identify the key user stories.
 
-1. What non-engineering risks can you identify? How will you handle them? Fill your product backlog accordingly.
+1. Organise the key stories into milestones.
+
+1. Hold a [planning poker](http://wwwis.win.tue.nl/2R690/doc/agile_planning_poker.pdf) session to establish first sprint backlog.
+
+1. Start first iteration on Monday!
 
 --------------------------------------------------------------------------------
 
 # Acknowledgements
 
-Some illustrations were taken from *User Story Mapping* by Jeff Paton
+Some illustrations were taken from *User Story Mapping* by Jeff Paton and *Iteration Zero* by James Grenning.
+
+
 
