@@ -3,8 +3,14 @@ title: Gametechnologie en Softwareproject
 layout: default
 ---
 
-# Hello World!
+###Laatste nieuws
 
-This repository will store slides and info about the University of Utrecht's Software Projects.
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <em> {{ post.date | date_to_string }} </em> <br>
+      {{ post.content }}
+    </li>
+  {% endfor %}
+</ul>
 
-More content will appear shortly.
