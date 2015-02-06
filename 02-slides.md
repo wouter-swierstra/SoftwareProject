@@ -258,9 +258,9 @@ There is a lot of software available to help:
 
 * [EasyBacklog](https://easybacklog.com) (recommended)
 
-* [GitHub issue tracker](http://www.position-absolute.com/articles/agile-workflow-with-github-issues/)
+* [GitHub issue tracker](http://www.position-absolute.com/articles/agile-workflow-with-github-issues/) or [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
 
-* [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
+Share your backlog with your UU supervisor access; do *not* share it with your client.
 
 --------------------------------------------------------------------------------
 
@@ -499,6 +499,8 @@ All team members have a set of cards.
 
 Every team member chooses the card with the number of *story points*, estimating how much work a story will be.
 
+Every story point is 8 hours of work.
+
 Unless there is a consensus, the people with the highest and lowest estimates motivate their choice.
 
 Make new estimations until the team agrees.
@@ -507,21 +509,13 @@ Make new estimations until the team agrees.
 
 --------------------------------------------------------------------------------
 
-# What are story points?
-
-People are really bad at accurate estimates.
-
-One story point does not correspond to a fixed amount of work – instead they try to measure *relative effort*.
-
-Keep stories small – between one and ten points.
-
---------------------------------------------------------------------------------
-
 # Development velocity
 
 Measuring how many story points your team completes in an iteration, this gives you an indication of your *development velocity*.
 
 Use your development velocity when planning stories for the next iteration.
+
+Keep stories less than 10 story points.
 
 Don't bite off more than you can chew.
 
