@@ -59,13 +59,13 @@ The moon on a stick.
 
 # The good news
 
-We do a lot of work to try to:
+We try to:
 
 * define projects that fit in the scope of the software project
 
 * manage customer expectations
 
-* coach you the student teams
+* coach the student teams
 
 But you still need to do a lot of hard work.
 
@@ -260,7 +260,7 @@ There is a lot of software available to help:
 
 * [GitHub issue tracker](http://www.position-absolute.com/articles/agile-workflow-with-github-issues/) or [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
 
-Share your backlog with your UU supervisor access; do *not* share it with your client.
+Share your backlog with your UU supervisor; do *not* share it with your client.
 
 --------------------------------------------------------------------------------
 
@@ -509,6 +509,12 @@ Make new estimations until the team agrees.
 
 --------------------------------------------------------------------------------
 
+# What is the point of planning poker?
+
+![fit](img/question.jpg)
+
+--------------------------------------------------------------------------------
+
 # Development velocity
 
 Measuring how many story points your team completes in an iteration, this gives you an indication of your *development velocity*.
@@ -569,11 +575,36 @@ Sometimes it can be helpful to establish a *user story map*.
 
 1. Organise the key stories into milestones.
 
-1. Hold a [planning poker](http://wwwis.win.tue.nl/2R690/doc/agile_planning_poker.pdf) session to establish first sprint backlog.
+1. Hold a [planning poker](http://wwwis.win.tue.nl/2R690/doc/agile_planning_poker.pdf) session to establish first sprint backlog. (You can print cards or [buy them online](http://speelkaartenshop.nl/planning-poker-kaarten/713-planning-pokerkaarten.html))
 
 1. Start first iteration on Monday!
 
 --------------------------------------------------------------------------------
+
+# Scrum Coaching
+
+Morgen met Max Verhorst in BBG 545
+
+--------------------------------------------------------------------------------
+
+09-10 Politie
+
+10-11 Huisartsen
+
+11-12 eDLWO
+
+12-13 Power Saver Game
+
+13-14 NS
+
+14-15 Hijskraan
+
+15-16 Sandbox Architects
+
+16-17 Konekto
+
+--------------------------------------------------------------------------------
+
 
 # Acknowledgements
 

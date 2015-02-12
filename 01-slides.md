@@ -7,6 +7,8 @@ slidenumbers: true
 
 ## Wouter Swierstra
 
+### Try to sit with the rest of your team
+
 --------------------------------------------------------------------------------
 
 # So you think you can program...
@@ -46,6 +48,8 @@ These lectures try to bridge the gap by providing practical advice for your proj
 ^ You've seen programming in IMP
 
 ^ You've seen design in MSO
+
+^ Databases, Computerarchitecture & networks...
 
 ^ What is left to learn? Where are your blind spots?
 
@@ -216,19 +220,7 @@ The *software development process* is the set of activities that produce a piece
 
 - *Idea:* documenting an approach will make success repeatable, projects (cost-)effective, and results predictable.
 
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# What software development methods have you heard of?
-
-^ Waterfall, RUP, Agile/Scrum
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# Which have you actually used?
+^ You should have heard of RUP, Waterfall, Scrum
 
 --------------------------------------------------------------------------------
 
@@ -303,32 +295,6 @@ Agile software development refers to a collection of software development method
 * and many others
 
 They are all the Agile methods.
-
---------------------------------------------------------------------------------
-
-# Agile principles - I
-
-* Customer satisfaction by rapid delivery of useful software
-
-* Welcome changing requirements, even late in development
-
-* Working software is delivered frequently (weeks rather than months)
-
-* Face-to-face conversation is the best form of communication
-
---------------------------------------------------------------------------------
-
-# Agile principles - II
-
-* Working software is the principal measure of progress
-
-* Continuous attention to technical excellence and good design
-
-* Simplicity—the art of maximizing the amount of work not done—is essential
-
-* Self-organizing teams
-
-* Regular adaptation to changing circumstances
 
 --------------------------------------------------------------------------------
 
@@ -544,8 +510,6 @@ Start planning the next iteration after the demo. Your demo should help your cus
 * Don't solve problems during the standup.
 
 * Lots of deadlines means lots of chances to write bad code to meet a deadline, introducing *technical debt*.
-
-* You need a closely knit development team
 
 * Prioritizing stories is hard.
 
