@@ -7,6 +7,8 @@ slidenumbers: true
 
 ## Wouter Swierstra
 
+### Try to sit with the rest of your team
+
 --------------------------------------------------------------------------------
 
 # So you think you can program...
@@ -46,6 +48,8 @@ These lectures try to bridge the gap by providing practical advice for your proj
 ^ You've seen programming in IMP
 
 ^ You've seen design in MSO
+
+^ Databases, Computerarchitecture & networks...
 
 ^ What is left to learn? Where are your blind spots?
 
@@ -216,19 +220,7 @@ The *software development process* is the set of activities that produce a piece
 
 - *Idea:* documenting an approach will make success repeatable, projects (cost-)effective, and results predictable.
 
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# What software development methods have you heard of?
-
-^ Waterfall, RUP, Agile/Scrum
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# Which have you actually used?
+^ You should have heard of RUP, Waterfall, Scrum
 
 --------------------------------------------------------------------------------
 
@@ -306,32 +298,6 @@ They are all the Agile methods.
 
 --------------------------------------------------------------------------------
 
-# Agile principles - I
-
-* Customer satisfaction by rapid delivery of useful software
-
-* Welcome changing requirements, even late in development
-
-* Working software is delivered frequently (weeks rather than months)
-
-* Face-to-face conversation is the best form of communication
-
---------------------------------------------------------------------------------
-
-# Agile principles - II
-
-* Working software is the principal measure of progress
-
-* Continuous attention to technical excellence and good design
-
-* Simplicity—the art of maximizing the amount of work not done—is essential
-
-* Self-organizing teams
-
-* Regular adaptation to changing circumstances
-
---------------------------------------------------------------------------------
-
 # The Scrum Framework
 
 - One popular approach organising an Agile development team.
@@ -402,6 +368,8 @@ The Scrum Master is responsible for making sure the process is smooth:
 - chair review meetings or the daily standup;
 - facilitates the process, without being a a project manager.
 
+We will distinguish between *Scrum Master* and *coach*.
+
 --------------------------------------------------------------------------------
 
 # The Development Team
@@ -413,6 +381,18 @@ The Scrum Master is responsible for making sure the process is smooth:
 
 --------------------------------------------------------------------------------
 
+# Scrum Master & Coach
+
+Rather than assign all 'management' responsibility to a single person (the Scrum Master), we distinguish two roles:
+
+* Scrum Master – manages the product backlog; has an overview of scheduling and team's performance.
+
+* Coach – chairs standups, review and planning meetings; ensures everyone is heard; ensures decision making is smooth.
+
+By doing so, more people have the opportunity to fulfill a non-technical role.
+
+--------------------------------------------------------------------------------
+
 # Standup meetings - I
 
 * Start each day with a stand-up meeting.
@@ -420,6 +400,8 @@ The Scrum Master is responsible for making sure the process is smooth:
 * The stand up meeting is at a fixed time and location, regardless of if people are missing.
 
 * Pro-tip: set a repeating alarm on your cellphone.
+
+* Pro-tip: late? 1 euro fine.
 
 * Everyone stands up – no sitting!
 
@@ -529,8 +511,6 @@ Start planning the next iteration after the demo. Your demo should help your cus
 
 * Lots of deadlines means lots of chances to write bad code to meet a deadline, introducing *technical debt*.
 
-* You need a closely knit development team
-
 * Prioritizing stories is hard.
 
 * You are not experienced developers.
@@ -567,27 +547,17 @@ You may have experience working with methodology – use this!
 
 --------------------------------------------------------------------------------
 
-# More information
-
-Lots of info available online:
-
-* [http://www.scrumalliance.org](http://www.scrumalliance.org)
-
-* [http://scrummethodology.com/](http://scrummethodology.com/)
-
-* [http://www.mountaingoatsoftware.com/](http://www.mountaingoatsoftware.com/)
-
---------------------------------------------------------------------------------
-
 # Learn more
 
-Free Scrum training videos:
+Lots of great free material online:
 
-  [http://scrummethodology.com/](http://scrummethodology.com/)
+* [The official Scrum guide](http://scrumguides.org/scrum-guide.html)
 
-Check out the reference card:
+* Free Scrum training videos: [http://scrummethodology.com/](http://scrummethodology.com/)
 
-  [http://scrumreferencecard.com/scrum-reference-card/](http://scrumreferencecard.com/scrum-reference-card/)
+* [The Scrum reference card](http://scrumreferencecard.com/scrum-reference-card/)
+
+* [The Scrum primer](http://assets.scrumfoundation.com/downloads/1/scrumprimer20.pdf?1352449266)
 
 --------------------------------------------------------------------------------
 
@@ -597,8 +567,7 @@ Check out the reference card:
 
 # Scrum coaching
 
-Friday February 13th, Max Verhorst (IT consultant and Scrum coach at
-InfoSupport) will visit the University.
+Friday February 13th, Max Verhorst (IT consultant and Scrum coach at InfoSupport) will visit the University.
 
 You will have an hour long session with him to present your project,
 product backlog, and plans.

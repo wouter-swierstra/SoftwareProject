@@ -11,6 +11,8 @@ slidenumbers: true
 
 # Last time
 
+<br><br><br>
+
 * Establishing a product backlog
 
 * Planning iterations
@@ -19,9 +21,17 @@ slidenumbers: true
 
 # Today
 
-* Software architecture
+<br><br><br>
 
 * Risks
+
+* Software architecture
+
+--------------------------------------------------------------------------------
+
+# Risk
+
+![](img/01-spekjes.jpg)
 
 --------------------------------------------------------------------------------
 

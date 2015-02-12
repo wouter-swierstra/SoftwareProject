@@ -1,4 +1,4 @@
-footer: Software project – Lecture 1
+footer: Software project – Lecture 0
 slidenumbers: true
 
 
