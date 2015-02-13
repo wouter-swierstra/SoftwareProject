@@ -36,7 +36,7 @@ What to do?
 
 # What is git?
 
-* A popular, powerful distributed file version control system
+* Git is a popular distributed version control system
 * Initiated by Linux's Linus Torvalds and developed by Junio Hamano
 * It is free and obtainable from [git-scm.com](http://git-scm.com)
 * Existing systems did not perform well enough, so Git was born
@@ -97,6 +97,7 @@ $ git commit -a    # use latest content of all tracked files
 --------------------------------------------------------------------------------
 
 
+git remote set-url origin --push --add <adres 2e repo>
 
 --------------------------------------------------------------------------------
 
@@ -458,13 +459,6 @@ $ git commit    # merge commited after resolving conflicts
 \end{notitleblock}   
 \end{frame}
 
-\begin{frame}
-  \frametitle{How do we stand? (part 8)}
-  \single{After this large merge:}
-  \vspace*{-0.5cm}
-  \includegraphics[width=9.5cm]{gitkscreen8.png}
-\end{frame}
-
 \begin{frame}[fragile]
   \frametitle{Pull}
   \begin{itemize}
@@ -488,66 +482,7 @@ $ git pull   # Get the latest from remote and merge it in
 \end{notitleblock}
 \end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Sharing changes with others}
-  \begin{itemize}
-    \item Make patches available to others by mail
-    \item Or use push and pull. For push you need
-      write access to that repo.
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git format-patch origin..HEAD   
-$ git am mbox 
-    # import patches from the mailbox "mbox"
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
 
-\begin{frame}[fragile]
-  \frametitle{Not covered}
-  \begin{itemize}
-    \item garbage collection \verb|$ git gc|
-    \item check repo \verb|$ git fsck|
-    \item packing
-    \item dangling objects
-    \item submodules
-  \end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Git hosting}
-  There are plenty of (free) options for hosting a git repository.
-  \begin{itemize}
-  \item GitHub is probably the most famous
-    \begin{itemize}
-    \item Lots of users, great community;
-    \item Limits on private repositories;
-    \item Great place to host open source projects.
-    \end{itemize}
-  \item Bitbucket 
-    \begin{itemize}
-    \item Supports Mercurial and Git;
-    \item Similar features to Github, different pricing model.
-    \end{itemize}
-  \item ... and lots of others.
-  \item It's worth exploring which option works for you.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Why use a hosting website?}
-  \begin{itemize}
-  \item No need to set up your own server;
-  \item Provides free wiki and bug tracker.
-  \item Use them!
-  \item Wikis are a cheap way to record information like requirements,
-    iteration info, a glossary, etc.
-  \item Use the bug tracker for your product backlog.
-  \item Both need maintainence!
-  \end{itemize}
-\end{frame}
-
-
-
-
-
-
+https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+https://guides.github.com/introduction/flow/index.html
+https://help.github.com/
