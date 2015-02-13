@@ -2,3 +2,6 @@ archive
 .DS_Store
 detritus.md
 _site/
+Gemfile.lock
+
+
