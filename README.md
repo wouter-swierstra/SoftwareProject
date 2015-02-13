@@ -1,22 +1,24 @@
 
-1. Intro, Marshmallow, Scrum
+Table of Contents
 
-1. Requirements and planning
+* 00-slides.md – introduction to Scrum for supervisors
 
-1. Risks, constraints, architecture
+* 01-slides.md – introduction, marshmallow challenge, introduction to Scrum
 
-1. Working with git
+* 02-slides.md – user stories and planning
 
-1. SCM build management (Make & Visual Studio), Bash scripting
+* 03-slides.md – risks, constraints, architecture
 
-1. Testing, theory & practice, TDD, Quality assurance, pair programming
+* 04-slides.md – using git and GitHub effectively
 
-Links:
+* 05-slides.md – testing and quality assurance
 
-TDD -http://msdn.microsoft.com/en-us/library/aa730844(v=vs.80).aspx#guidelinesfortdd_topic2
+* 06-slides.md – SCM build management (Make & Visual Studio), Bash scripting
 
-Iteration zero pdf
 
-https://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
-https://guides.github.com/introduction/flow/index.html
-https://help.github.com/
+
+
+
+
+
+
