@@ -241,8 +241,35 @@ $ git clone git://github.com/wouter-swierstra/SoftwareProject
 ...
 $ emacs 04-slides.md
 $ git commit -am "Updated slides on git"
+...
 $ git push
+Counting objects: 9, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 3.37 KiB, done.
+Total 5 (delta 4), reused 0 (delta 0)
+To git@github.com:wouter-swierstra/SoftwareProject.git
+   6040584..9b40f60  master -> master
 ```
+
+Git's user interface can be a bit noisy...
+
+--------------------------------------------------------------------------------
+
+# Basic usage: git pull
+
+```
+$ git pull
+remote: Counting objects: 15, done.
+remote: Compressing objects: 100% (15/15), done.
+remote: Total 15 (delta 4), reused 1 (delta 0)
+Unpacking objects: 100% (15/15), done.
+From github.com:wouter-swierstra/SoftwareProject
+   6abc078..08fac51  master     -> origin/master
+Updating 6abc078..08fac51
+```
+
+This pulls in any new changes from the remote repository
 
 --------------------------------------------------------------------------------
 
@@ -256,17 +283,128 @@ origin	git://github.com/wouter-swierstra/SoftwareProject (push)
 origin	git://github.com/wouter-swierstra/SoftwareProject (fetch)
 ```
 
+You can add new remote branches using
+
+```
+git remote add remoteName git://github.com/user/repository.git
+```
+
+Feel free to choose your own meaningful `remoteName`
+
 --------------------------------------------------------------------------------
 
-# Push
+# Recap
+
+This covers the basic interactions necessary to mimic subversion.
+
+Git makes it *very easy* to work on different versions of your software.
+
+You can create new branches, switch between branches, or merge branches quickly and easily.
+
+Using branches effectively can drastically improve collaborative development.
 
 --------------------------------------------------------------------------------
 
-# Pull
+# Branching
+
+In git, a *branch* is effectively a pointer to some repository state.
+
+You can add new changes to any specific branch, which may cause development lines to diverge.
+
+Branches may be *merged*, aggregating changes made in different development lines.
 
 --------------------------------------------------------------------------------
+
+![100%](img/04-no-branch.png)
+
+--------------------------------------------------------------------------------
+
+# Creating and switching branches
+
+```
+$ git branch iss53
+$ git branch
+  iss53
+* master
+$ git checkout iss53
+$ git branch
+* iss53
+  master
+```
+--------------------------------------------------------------------------------
+
+![100%](img/04-create-branch.png)
+
+--------------------------------------------------------------------------------
+
+# Diverging branches
+
+If I'm in the `iss53` branch, I can make changes *without effecting the master branch*.
+
+```
+$ emacs README.md
+$ git commit -am "Working on #53"
+```
+--------------------------------------------------------------------------------
+
+
+![100%](img/04-branch-diverge.png)
+
+--------------------------------------------------------------------------------
+
+# Even more branches
+
+```
+$ git checkout master
+$ git branch hotfix
+$ git checkout hotfix
+$ emacs README.md
+$ git commit -am "Hotfix in README.md"
+```
+
+--------------------------------------------------------------------------------
+
+![100% inline](img/04-hotfix.png)
+
+How to get the changes to the `hotfix` branch back into `master`?
+
+--------------------------------------------------------------------------------
+
+# Git merge
+
+```
+$ git checkout master
+$ git merge hotfix
+Updating f42c576..3a0874c
+Fast-forward
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
+```
+
+--------------------------------------------------------------------------------
+
+![90% inline](img/04-merged.png)
+
+From this point on, continue development in the `iss53` branch until it is ready to be merged with the master branch.
+
+--------------------------------------------------------------------------------
+
+# Not covered
+
+* Using `git branch -d` to delete branches
+
+* Working with remote branches
+
+* How `git pull` uses branches under the hood.
+
+* More advanced branching commands
+
+--------------------------------------------------------------------------------
+
 
 # The real challenge
+
+<br>
 
 This covers the very basic `git` operations.
 
@@ -276,9 +414,85 @@ But collaborating *effectively* is not easy.
 
 --------------------------------------------------------------------------------
 
-# Branching
+# Golden rules
 
-Git makes it *very easy* to work on different versions of your software.
+1. The master branch may only contain code that is tested, reviewed and ready to be released.
+
+1. Only commit code that compiles, even in experimental branches.
+
+1. New user stories start in a fresh branch; no such branch lives more than three iterations, before being merged.
+
+1. Create pull requests for every new branch. Only merge your changes if everyone is happy, the code is tested and reviewed.
+
+--------------------------------------------------------------------------------
+
+# 1 – The master branch is ready for release
+
+The master branch serves a single purpose:
+
+## it represents the current stable version of development
+
+If I walk into your office at any point in time, you should be able to demo the master branch.
+
+The code should be so good, that you'd be happy to release it, even if it lacks functionality.
+
+--------------------------------------------------------------------------------
+
+# 2 – Only commit code that compiles
+
+![fit inline](img/04-andy.png)
+
+^ Breaking the build blocks all other developers.
+
+^ Shame on you!
+
+--------------------------------------------------------------------------------
+
+# 2 – Only commit code that compiles
+
+Breaking the build is the cardinal sin of collaborative development.
+
+This blocks the entire development team, until you fix the issue.
+
+Compile and run your regression tests before committing – don't make other people clean up your mess.
+
+--------------------------------------------------------------------------------
+
+# 3 – New stories start in a new branch
+
+The master branch is the stable development release.
+
+Unfinished features are *never* developed on the master branch directly.
+
+Instead, every iteration starts with several new branches.
+
+Once new features are tested, reviewed and ready, they can be merged back into master.
+
+--------------------------------------------------------------------------------
+
+# 4 – Create pull requests
+
+In principle, you can manage branches from the commandline.
+
+If you choose to host your code on GitHub you have some additional features that can help collaboration:
+
+* Issue tracker (which can be used for your product backlog)
+
+* Wiki for tracking documentation, discussions, or meeting notes.
+
+* GUI for creating and merging branches
+
+* Pull request = Code + Issue + Discussion
+
+--------------------------------------------------------------------------------
+
+# Github Demo
+
+^ Create branch
+
+^ Create pull request
+
+^ Discuss pull requests
 
 --------------------------------------------------------------------------------
 
@@ -288,490 +502,38 @@ Git makes it *very easy* to work on different versions of your software.
 
 1. Only commit code that compiles, even in experimental branches.
 
-1. No branch lives more than three iterations
-(the master branch excluded).
+1. New user stories start in a fresh branch; no such branch lives more than three iterations, before being merged.
 
-1. Create pull requests for every new branch. Only merge your changes if everyone is happy.
-
---------------------------------------------------------------------------------
-
-![fit inline](img/04-andy.png)
-
-^ Don't be like Andy
+1. Create pull requests for every new branch. Only merge your changes if everyone is happy, the code is tested and reviewed.
 
 --------------------------------------------------------------------------------
 
-* Tagging end-of-sprint demos
+# Using GitHub
 
-```
-$ git
-```
+Feel free to use GitHub, provided:
 
-* 
+* your client is happy for you to do so;
 
---------------------------------------------------------------------------------
-
-# GitHub
-
-* Repository
-* Issue tracker
-* Wiki
-* Useful graphical interface
+* a copy of the repository is hosted on the UU servers (for instance, as an additional remote).
 
 --------------------------------------------------------------------------------
 
+# Best practices
 
+* Use `git tag` to tag the version of the repository at the end of every sprint or upon delivering a milestone.
+
+* Write meaningful commit messages – use "#x" to refer to issue numbers in the GitHub issue tracker.
+
+* Check your changes regularly using `git diff` and `git status`
+
+* Use `git log` to review recent commits
 
 --------------------------------------------------------------------------------
 
 # Further reading
 
-* [Pro-git](http://git-scm.com/book/en/v2)
+* Scott Chacon's [Pro-git](http://git-scm.com/book/en/v2)
 
+* [Atlassian git tutorials](https://www.atlassian.com/git/)
 
-git diff
-git log
-
-\begin{frame}[fragile]
-  \frametitle{As you construct the commit}
-  \begin{itemize}
-    \item After a commit Index and the HEAD are identical
-    \item As you \code{add} and \code{rm}, Index starts to deviate
-      from the HEAD.
-\begin{notitleblock}    
-\begin{verbatim}
-$ git diff --cached # See what has changed
-diff --git a/.gitignore b/.gitignore
-index 2a85b92..0c85339 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -1,3 +1,4 @@
- dist/*
- build/*
-+.svn      
-\end{verbatim}
-\end{notitleblock}
-    \item After commit, HEAD := Index
-    \item \verb|git diff| shows changes that will not be committed
-   %  \item \verb|git status| gives a brief per-file summary of the above
-  \end{itemize}
-\end{frame}
- 
-\begin{frame}
-  \frametitle{How do we stand? (part 1)}
-  \begin{itemize}
-    \item Run \code{gitk}. 
-  \end{itemize}  
-  \includegraphics[width=10cm]{gitkscreen1.png}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Exploring the history}
-  \begin{itemize}
-    \item To find out what the latest commit was: \code{git show}
-\begin{notitleblock}
-\begin{verbatim}
-commit 28cbe84da2877dc91ceeeb50755c74e84cdd9fc7
-Author: Jurriaan Hage <jur@cs.uu.nl>
-Date:   Thu Feb 28 10:48:45 2013 +0100
-
-    Added .svn to ignore
-
-diff --git a/.gitignore b/.gitignore
-index 2a85b92..0c85339 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -1,3 +1,4 @@
- dist/*
- build/*
-+.svn
-\end{verbatim}
-\end{notitleblock}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Commits}
-  \begin{itemize}
-    \item All commits are identified with a 40-hexdigit id, 
-        28cbe84da2877dc91ceeeb50755c74e84cdd9fc7 
-        (aka object name, aka SHA-1 id)
-    \item It is a hash of the contents of the commit.
-    \item Chance that it is not globally unique is microscopically small.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Tags}
-  \begin{itemize}
-    \item You can name these things:
-\begin{notitleblock}
-\begin{verbatim}
-git tag readytogo
-    28cbe84da2877dc91ceeeb50755c74e84cdd9fc7
- \end{verbatim}
-\end{notitleblock}   
-    \item To include more information with the reference, create a 
-       \emph{tag object}
-    \item Use tags to designate specific versions of the
-      software system that you have released.
-    \item As you commit, the HEAD moves forward to the new commit, but 
-       tags stay put.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 2)}
-  \includegraphics[width=9.5cm]{gitkscreen2.png}
-  \single{Note the parent and child reference, and the yellow tag.}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Browsing the repo}
-\begin{notitleblock}
-\begin{verbatim}
-$ git log   # all commits
-$ git log v2.6.15..v2.6.16  # ...in v2.6.16, not in v2.6.15
-$ git log test..master  # commits reachable from master but not test
-$ git log --since="2 weeks ago" # commits from the last 2 weeks
-$ git log Makefile      # commits which modify Makefile
-$ git log src/     # commits which modify any file under src/
-$ git show v2.6.15:a.txt  # look at v2.6.15 version of a.txt
-$ git diff v2.6.15..HEAD    # diff with current head
-$ git diff v2.6.15..v2.6.16  # diff between two tags
-$ git grep "foo()"    # search working directory for "foo()"
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Making a tarball}
-\begin{notitleblock}
-\begin{verbatim}
-$ git archive --format=tar --prefix=project/ HEAD | 
-      gzip >latest.tar.gz
-$ tar tfz latest.tar.gz
-project/
-project/.gitignore
-project/README
-project/src/
-project/src/Onlyloc.ag
-project/src/Onlyloc.hs
-project/src/Onlyloc.hs.visage
-project/src/TODO
-project/src/Test.ag
-project/src/Test.hs
-...
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Branches}
-  \begin{itemize}
-    \item Development is not straight-line, but branching is natural    
-    \item The master is by convention (like trunk in svn):
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch
-* master
-\end{verbatim} % $
-\end{notitleblock}
-  \end{itemize}
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Going experimental}
-Create a new branch of the HEAD, to try out something new
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch experimental
-$ git branch
-  experimental
-* master
-
-# Variants:
-$ git branch new v2.6.15 # tag named v2.6.15
-$ git branch new HEAD^ # commit before the most recent
-$ git branch new HEAD^^  # the one before that
-$ git branch new test~10 # ten commits before 
-                         # tip of branch "test"
-\end{verbatim}
-\end{notitleblock}  
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 3)}
-  \includegraphics[width=9.5cm]{gitkscreen3.png}
-  \single{Note the additional branch in green}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Changes to the (active) master branch}
-\begin{notitleblock}
-\begin{verbatim}
-$ git rm -r workinprogress/
-$ git commit
-[master 92e269c] In the master branch, work in progress 
- is not needed
- 1 file changed, 63 deletions(-)
- delete mode 100644 workinprogress/AttributeFrame.java
-\end{verbatim}
-\end{notitleblock}  
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 4)}
-  \includegraphics[width=9.5cm]{gitkscreen4.png}
-  \single{Note that master moved on, but experimental did not}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Switching branches}
-\noindent Switch to the experimental branch:
-\begin{notitleblock}
-\begin{verbatim}
-$ git checkout experimental
-Switched to branch 'experimental'
-$ git branch
-* experimental
-  master
-\end{verbatim}
-\end{notitleblock} 
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 5)}
-  \includegraphics[width=9.5cm]{gitkscreen5.png}
-  \single{Note the red uncommitted changes warning (after changing
-  a Java source file)}
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 6)}
-  \single{After a \code{git commit -a} all is peachy:}
-  \includegraphics[width=9.5cm]{gitkscreen6.png}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Switch back to the master}
-\noindent Switch to the experimental branch:
-\begin{notitleblock}
-\begin{verbatim}
-$ git checkout master
-Switched to branch 'master'
-$ git branch
-  experimental
-* master
-\end{verbatim}
-\end{notitleblock} 
-\single{\code{workinprogress} directory is empty!}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Merge experimental back in}
-\begin{notitleblock}
-\begin{verbatim}
-$ git merge experimental
-CONFLICT (modify/delete): 
-workinprogress/AttributeFrame.java deleted in HEAD 
-and modified in experimental. Version experimental 
-of workinprogress/AttributeFrame.java left in tree.
-Automatic merge failed; fix conflicts and then commit the result.
-\end{verbatim}
-\end{notitleblock} 
-\single{\code{workinprogress} directory is not empty anymore!}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Revolving the conflict}
-  \begin{itemize}
-    \item No need to edit the file, since I want to keep it whole:
-  \end{itemize}  
-\begin{notitleblock}
-\begin{verbatim}
-$ git commit -a
-[master ebca5c1] Merge branch 'experimental'
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 7)}
-  \single{Note the two parents (because of the merge):}
-  \includegraphics[width=9.5cm]{gitkscreen7.png}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Up to now...}
-  \begin{itemize}
-    \item we have kept track of our own changes:
-       commit and checkout HEAD move data between the local
-       repo and the working directory
-    \item So what about sharing work with others?
-  \end{itemize}  
-\end{frame}
-
-
-\begin{frame}
-  \frametitle{A (simplified) overview of the general set-up}
-  \begin{center}
-  \includegraphics[height=5.5cm]{GitDataFlowSimplified.png}
-  (From Wikipedia)
-  \end{center}
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Check out a remote repository}
-\begin{notitleblock}
-\begin{verbatim}
-git clone git://git.kernel.org/pub/scm/git/git.git
-cd git
-\end{verbatim} % $
-\end{notitleblock}
-\end{frame}
-
-
-\begin{frame}[fragile]
-  \frametitle{Doing updates (also remote)}
-  \begin{itemize}
-    \item \code{git fetch} does an update from the repo's you cloned
-      from.
-    \item Also for remote branches:
-\begin{notitleblock}
-\begin{verbatim}
-$ git remote add linux-nfs \
-     git://linux-nfs.org/pub/nfs-2.6.git
-$ git remote add gitself \ 
-     git://git.kernel.org/pub/scm/git/git.git
-$ git fetch gitself   # update from remote
-$ git remote
-gitself
-linux-nfs
-$ git remote remove linux-nfs # Changed my mind
-\end{verbatim} % $
-\end{notitleblock}  
-      
-  \end{itemize}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Merging} 
-  \begin{itemize}
-    \item Now we  have fetched gitself, and want to merge its 
-       \verb|master| branch into our current branch
-    \item Merge may lead to numerous merge actions on your part
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch
-  experimental
-* master
-$ git branch -r
-  gitself/maint
-  gitself/master  # This is the one we want
-  ...
-$ git merge gitself/master # merge into current branch
-$ edit README
-$ edit .gitignore
-$ git add README .gitignore
-$ git commit    # merge commited after resolving conflicts 
-\end{verbatim}
-\end{notitleblock}   
-\end{frame}
-
-\begin{frame}
-  \frametitle{How do we stand? (part 8)}
-  \single{After this large merge:}
-  \vspace*{-0.5cm}
-  \includegraphics[width=9.5cm]{gitkscreen8.png}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Pull}
-  \begin{itemize}
-    \item Often we want to combine \verb|fetch| with \verb|merge|, and for that
-      you can use \verb|pull|
-    \item 
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git pull . gitself/master
-$ git pull     # if the remote branch is ``tracked''
-\end{verbatim}
-\end{notitleblock}
-To employ tracking, 
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch --track gitmaster gitself/master
-$ git checkout gitmaster   # Switch to gitmaster
-$ git pull   # Get the latest from remote and merge it in
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Sharing changes with others}
-  \begin{itemize}
-    \item Make patches available to others by mail
-    \item Or use push and pull. For push you need
-      write access to that repo.
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git format-patch origin..HEAD   
-$ git am mbox 
-    # import patches from the mailbox "mbox"
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
-
-\begin{frame}[fragile]
-  \frametitle{Not covered}
-  \begin{itemize}
-    \item garbage collection \verb|$ git gc|
-    \item check repo \verb|$ git fsck|
-    \item packing
-    \item dangling objects
-    \item submodules
-  \end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Git hosting}
-  There are plenty of (free) options for hosting a git repository.
-  \begin{itemize}
-  \item GitHub is probably the most famous
-    \begin{itemize}
-    \item Lots of users, great community;
-    \item Limits on private repositories;
-    \item Great place to host open source projects.
-    \end{itemize}
-  \item Bitbucket 
-    \begin{itemize}
-    \item Supports Mercurial and Git;
-    \item Similar features to Github, different pricing model.
-    \end{itemize}
-  \item ... and lots of others.
-  \item It's worth exploring which option works for you.
-  \end{itemize}
-\end{frame}
-
-\begin{frame}\frametitle{Why use a hosting website?}
-  \begin{itemize}
-  \item No need to set up your own server;
-  \item Provides free wiki and bug tracker.
-  \item Use them!
-  \item Wikis are a cheap way to record information like requirements,
-    iteration info, a glossary, etc.
-  \item Use the bug tracker for your product backlog.
-  \item Both need maintainence!
-  \end{itemize}
-\end{frame}
-
-
-
-
-
-
+* [Pull request video tutorial](https://vimeo.com/41045197)
