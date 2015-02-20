@@ -129,7 +129,7 @@ This student abandoned the software project halfway through. The remaining stude
 
 --------------------------------------------------------------------------------
 
-# The good news
+# The bottom line
 
 <br><br><br>
 
@@ -411,6 +411,8 @@ Discuss the results of identifying the high-risk stories:
 
 # Where to start?
 
+![fit](img/question.jpg)
+
 <br><br>
 
 Start with high-value stories.
@@ -422,6 +424,8 @@ But should you focus on high-risk or low-risk stories?
 # Where to start?
 
 <br><br>
+
+![fit](img/question.jpg)
 
 Start with high-value stories.
 
@@ -483,9 +487,11 @@ If someone is holding a gun to your head, which is more important:
 
 --------------------------------------------------------------------------------
 
-# Constraints
+![fit](img/question.jpg)
 
+# Why can your project fail?
 
+# What are you going to do about it?
 
 --------------------------------------------------------------------------------
 
@@ -547,7 +553,21 @@ Does everyone agree that they work?
 
 # Erik Meijer
 
-#[Sofware is eating the world](https://vimeo.com/110554082)
+#[Software is eating the world](https://vimeo.com/110554082)
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# Do you agree with Erik?
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# Rewatch his video after the project.
+
+# Do you still agree or disagree?
 
 --------------------------------------------------------------------------------
 
@@ -570,13 +590,6 @@ Does everyone agree that they work?
     * Which architectural patterns or tactics can help?
     * Which other quality attributes may be negatively affected by these decisions? Is that a problem?
 
-
-
 --------------------------------------------------------------------------------
 
-![fit](img/question.jpg)
-
-# Why can your project fail?
-
-# What are you going to do about it?
-
+# Next time: your presentations!
