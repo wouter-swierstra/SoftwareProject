@@ -24,66 +24,290 @@ slidenumbers: true
 
 # Collaborative software development
 
+<br>
+
 You have two weeks to finish your user stories.
 
 And need to give a demo at the end.
 
-But you need to work in parallel with many team members.
+## How can you develop different stories in parallel without breaking your working prototype?
 
-What to do?
+--------------------------------------------------------------------------------
+
+# Version control
 
 --------------------------------------------------------------------------------
 
 # What is git?
 
 * A popular, powerful distributed file version control system
-* Initiated by Linux's Linus Torvalds and developed by Junio Hamano
 * It is free and obtainable from [git-scm.com](http://git-scm.com)
-* Existing systems did not perform well enough, so Git was born
-* In May 2012 somebody found that 27 percent of professional developers uses Git.
+* Originally developed to manage the Linux kernel
+* An estimated 27 percent of professional developers uses Git (May '12).
+
+--------------------------------------------------------------------------------
+
+# Getting to grips with git
+
+* Git is a very powerful tool with many different features.
+
+* The user interface takes some getting used to...
+
+* When used correctly, it can be extremely effective.
+
+* If you screw up, there is usually a way to undo your changes.
+
+^ StackOverflow!
 
 --------------------------------------------------------------------------------
 
 # Starting a new repo
 
 ```
-$ tar xzf project.tar.gz
-$ cd project
 $ git init
 Initialized empty Git repository in .git/
-$ vi .gitignore # Tell git what to ignore...
-$ git add .    # add all files in project
-$ git commit   # make your first commit
+```
+
+Add the README.md file to the repository
+
+```
+$ git add README.md
+```
+
+Commit the changes you made to README.md
+
+```
+$ git commit -m "Added README.md"
 ```
 
 --------------------------------------------------------------------------------
 
-# Preparing a commit
+# Cloning an existing repository
 
-* Use `git add` to add new files to repo
-* Indicate that certain changed files should be committed
-* Delete an item from the repo
+To get your hands on a copy of an existing repository use:
+
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+```
+
+Note that `git clone` supports several different protocols, including SSH.
 
 --------------------------------------------------------------------------------
 
-```
-$ git add olderfile.txt    # updated file
-$ git add brandnew.txt    # new file
-$ git rm deletable.txt     # old file, no local delete
-$ git commit
-```
+# Git vs Svn
 
---------------------------------------------------------------------------------
-# Variants and abbreviations
+Git is a *distributed* version control system:
 
-```
-$ git commit justthis.txt # use latest content only of justthis.txt
-$ git commit -a    # use latest content of all tracked files
-```
+* a copy of a repository can share changes with any other copy.
+* almost all commands operate on your *local copy*
+* sharing changes with others happens in two steps:
+    - commiting your changes locally
+    - pushing these changes to a remote server
 
 --------------------------------------------------------------------------------
 
-![fit](img/04-andy.png)
+# Git terminology
+
+![inline](img/04-git-terminology.png)
+
+Picture from Scott Chacon's *Pro-Git*.
+
+^ Untracked -- not in the repository
+
+^ Unmodified -- tracked, but not modified
+
+^ Modified -- tracked and modified
+
+^ Staged -- modified and to be included in the next commit
+
+--------------------------------------------------------------------------------
+
+# Git status
+
+```
+$ git status
+# On branch master
+nothing to commit (working directory clean)
+
+$ emacs 04-slides.md
+$ git status
+
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#   04-slides.md
+```
+
+^ So we need to add 04-slides.md
+
+--------------------------------------------------------------------------------
+
+# Adding new files
+
+```
+$ git add 04-slides.md
+$ git status
+# On branch master
+# Changes to be committed:
+#    (use "git reset HEAD <file>..." to unstage)
+# 
+#    new file: 04-slides.md
+```
+
+--------------------------------------------------------------------------------
+
+# Staging modified files
+
+
+Similarly, we can stage modified files using `git add`.
+
+```
+$ emacs README.md
+$ git add README.md
+# On branch master
+# Changes to be committed:
+#    (use "git reset HEAD <file>..." to unstage)
+# 
+#    new file: 04-slides.md
+#    modified: README.md
+```
+
+Git gives you control over which files to include in a single commit.
+
+--------------------------------------------------------------------------------
+
+# Pro-tip: .gitignore to minimize noise
+
+Generated binaries, documentation, and so forth are not under version control, but keep showing up when you run `git status`.
+
+You can have a `.gitignore` file, listing the files, directories, and patterns that you want git to ignore:
+
+```
+$ cat .gitignore
+*.pdf
+.DS_Store
+build/
+```
+
+--------------------------------------------------------------------------------
+
+# Committing your changes
+
+The `git commit` command commits all the staged changes.
+
+```
+$ git commit -m "Added 04-slides.md; updated README.md"
+[master 76d15ab] Added 04-slides.md; updated README.md
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 04-slides.md
+```
+
+These changes are recorded *locally* but not yet shared with others.
+
+--------------------------------------------------------------------------------
+
+# Not mentioned
+
+* `git mv` to rename files, without losing their history
+
+* `git rm` to remove files from the repository
+
+* `git commit -a` to record all your changes to tracked files
+
+* `git log` to get an overview of recent changes
+
+* `git reset` to undo changes
+
+--------------------------------------------------------------------------------
+
+# Sharing your changes
+
+All these commands operate on your local copy of the repository.
+
+Nothing is shared with others yet.
+
+* `git pull` – pulls in changes from some other repository
+* `git push` – pushes your changes to another repository
+
+These commands communicate with *remote repositories*.
+
+--------------------------------------------------------------------------------
+
+# Basic usage: git push
+
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+...
+$ emacs 04-slides.md
+$ git commit -am "Updated slides on git"
+$ git push
+```
+
+--------------------------------------------------------------------------------
+
+# Showing remote repositories
+
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+...
+$ git remote -v
+origin	git://github.com/wouter-swierstra/SoftwareProject (push)
+origin	git://github.com/wouter-swierstra/SoftwareProject (fetch)
+```
+
+--------------------------------------------------------------------------------
+
+# Push
+
+--------------------------------------------------------------------------------
+
+# Pull
+
+--------------------------------------------------------------------------------
+
+# The real challenge
+
+This covers the very basic `git` operations.
+
+You can now collaborate on a single codebase.
+
+But collaborating *effectively* is not easy.
+
+--------------------------------------------------------------------------------
+
+# Branching
+
+Git makes it *very easy* to work on different versions of your software.
+
+--------------------------------------------------------------------------------
+
+# Golden rules
+
+1. The master branch may only contain code that is tested, reviewed and ready to be released.
+
+1. Only commit code that compiles, even in experimental branches.
+
+1. No branch lives more than three iterations
+(the master branch excluded).
+
+1. Create pull requests for every new branch. Only merge your changes if everyone is happy.
+
+--------------------------------------------------------------------------------
+
+![fit inline](img/04-andy.png)
+
+^ Don't be like Andy
+
+--------------------------------------------------------------------------------
+
+* Tagging end-of-sprint demos
+
+```
+$ git
+```
+
+* 
 
 --------------------------------------------------------------------------------
 
