@@ -88,6 +88,7 @@ To get your hands on a copy of an existing repository use:
 
 ```
 $ git clone git://github.com/wouter-swierstra/SoftwareProject
+$ git clone <studentnumber>@students.science.uu.nl:/home/projects/<ProjectTitle>/git/<GitRepo>.git
 ```
 
 Note that `git clone` supports several different protocols, including SSH.
