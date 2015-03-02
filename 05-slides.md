@@ -696,3 +696,23 @@ Bash scripts, like Makefiles, can quickly become complex and hard to maintain.
 
 * It can be incredibly useful to automate mundane tasks.
 
+--------------------------------------------------------------------------------
+
+# Request
+
+Source of these slides can be found in on GitHub.
+
+[https://github.com/wouter-swierstra/SoftwareProject](https://github.com/wouter-swierstra/SoftwareProject)
+
+I'm looking for tips to give next year's students:
+
+* Useful shell scripts, how to set up the UU git server, mirroring GitHub and UU repositories, ...
+
+Pull requests welcome!
+
+--------------------------------------------------------------------------------
+
+# Next time
+
+### Presentations about your risks, architecture, and planning
+

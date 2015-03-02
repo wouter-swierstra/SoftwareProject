@@ -516,6 +516,12 @@ Feel free to use GitHub, provided:
 
 * a copy of the repository is hosted on the UU servers (for instance, as an additional remote).
 
+There are plenty of alternatives:
+
+* BitBucket
+
+* GitLab
+
 --------------------------------------------------------------------------------
 
 # Best practices
@@ -527,6 +533,8 @@ Feel free to use GitHub, provided:
 * Check your changes regularly using `git diff` and `git status`
 
 * Use `git log` to review recent commits
+
+* Caveat: don't commit to the wrong branch! Use separate directories if necessary.
 
 --------------------------------------------------------------------------------
 
