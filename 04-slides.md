@@ -545,3 +545,5 @@ There are plenty of alternatives:
 * [Atlassian git tutorials](https://www.atlassian.com/git/)
 
 * [Pull request video tutorial](https://vimeo.com/41045197)
+
+* [Most common git screwups](http://41j.com/blog/2015/02/common-git-screwupsquestions-solutions/)
