@@ -1,4 +1,4 @@
-footer: Software project – Lecture 5
+footer: Software project – Lecture 6
 slidenumbers: true
 
 # Software Project
@@ -22,6 +22,16 @@ slidenumbers: true
 
 --------------------------------------------------------------------------------
 
+# Scrum coaching
+
+* Was it useful?
+
+* How could it be better?
+
+* Should we host another session?
+
+--------------------------------------------------------------------------------
+
 # The pitfalls of iterative software development
 
 Constant deadlines lead to poor design and *technical debt*:
@@ -32,7 +42,7 @@ Constant deadlines lead to poor design and *technical debt*:
 
 * We'll refactor this code later...
 
-If you're development velocity is dropping, something might be wrong.
+If your development velocity is dropping, something might be wrong.
 
 ![left](img/06-bad.jpg)
 
@@ -66,11 +76,11 @@ By now you should have completed your first iterations.
 
 Every iteration, you tackle the stories from your sprint backlog.
 
-But when is a story 'done'?
+But when is a story *done*?
 
 --------------------------------------------------------------------------------
 
-# Define what 'done' means
+# Define what *done* means
 
 * The code has unit tests
 
@@ -130,14 +140,13 @@ But it is the most widely used techniques to monitor code quality.
 
 #  Testing is dynamic, not static
 
-Testing means *running* a program, i.e., evaluating its *dynamic*
-behaviour.
+Testing means *running* a program, i.e., evaluating its *dynamic* behaviour.
 
 - We need to run tests in order to make sure that all environment factors that may influence the execution are taken into account
 
-- Results may depending on the system state
+- Results may depend on the system state
 
-- They may be affected by, memory unavailability, installed libraries, etc.
+- They may be affected by memory unavailability, installed libraries, etc.
 
 --------------------------------------------------------------------------------
 
