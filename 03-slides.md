@@ -1,7 +1,6 @@
 footer: Software project – Lecture 3
 slidenumbers: true
 
-
 # Software Project
 ### Lecture 3
 
@@ -13,583 +12,415 @@ slidenumbers: true
 
 <br><br><br>
 
-* Establishing a product backlog
+* Scrum planning
 
-* Planning iterations
-
---------------------------------------------------------------------------------
-
-# Today
-
-<br><br><br>
-
-* Risks, constraints, and quality attributes
-
-* Software architecture
+* Product backlog
 
 --------------------------------------------------------------------------------
 
-# Your current situation...
-
-* You have a prioritized product backlog.
-
-* You've had a planning session to fill your first sprint backlog.
-
-* You're aiming to develop a first prototype in the first iterations.
-
-What can possibly go wrong?
+## Working effectively with git and GitHub.
 
 --------------------------------------------------------------------------------
 
-# Risk
+# Collaborative software development
 
-## What is your marshmallow?
+<br>
 
-![](img/01-marshmallow.jpeg)
+You have two weeks to finish your user stories.
 
---------------------------------------------------------------------------------
+And need to give a demo at the end.
 
-# Risks
-
-**Risk** is determined by perceived probability and perceived impact.
-
-It is impossible to accurately estimate either factor.
-
-Instead use this to decide the risks on which to focus.
-
-* It is very likely that you will get your estimates wrong for the first sprint. This isn't so bad.
-
-* If the UU server's disk crashes, you could lose all your work. This is highly unlikely.
+## How can you develop different stories in parallel without breaking your working prototype?
 
 --------------------------------------------------------------------------------
 
-# Risk assessment for software projects
-
-* You have little experience working in a team;
-
-* You are exposed to unfamiliar technology;
-
-* You have to work in an unfamiliar domain;
-
-* Besides the project, you all have other courses, jobs, etc.
-
-You *cannot* change this, but you *can* act accordingly.
+# Version control
 
 --------------------------------------------------------------------------------
 
-# About risk
+# What is git?
 
-As computer scientists, we are trained to focus on *technical risk*
-
-* How to implement feature X? 
-
-* How to interface with system Y? 
-
-* How to call library Z?
-
-Sometimes the important risk is *not* in the technical part.
-
-^ Example: restaurant-dating website
+* A popular, powerful distributed file version control system
+* It is free and obtainable from [git-scm.com](http://git-scm.com)
+* Originally developed to manage the Linux kernel
+* An estimated 27 percent of professional developers uses Git (May '12).
 
 --------------------------------------------------------------------------------
 
-# Non-engineering risks
+# Getting to grips with git
 
-* "The lead developer's hobbies are base-jumping and cage fighting."
+* Git is a very powerful tool with many different features.
 
-* "Senior VP hates our manager."
+* The user interface takes some getting used to...
 
-* "The customer doesn't know what he wants."
+* When used correctly, it can be extremely effective.
 
-* "Bob and Alice refuse to work together."
+* If you screw up, there is usually a way to undo your changes.
 
---------------------------------------------------------------------------------
-
-# But that won't happen to us.
+^ StackOverflow!
 
 --------------------------------------------------------------------------------
 
-# Risks: example
+# Starting a new repo
 
-In a recent project there was an outspoken student who strongly pushed technology X.
+```
+$ git init
+Initialized empty Git repository in .git/
+```
 
-When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
+Add the README.md file to the repository
 
-^ Let's say X is Haskell.
+```
+$ git add README.md
+```
 
---------------------------------------------------------------------------------
+Commit the changes you made to README.md
 
-# Risks: example
-
-In a recent project there was an outspoken student who strongly pushed technology X.
-
-When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
-
-This student abandoned the software project halfway through. The remaining students threw away their code and started from scratch.
-
---------------------------------------------------------------------------------
-
-# The bottom line
-
-<br><br><br>
-
-You need to **identify risks**...
-
-... and take decisions to minimize them.
-
-... many of these decisions are *architectural*.
-
- --------------------------------------------------------------------------------
-
-![right fit](img/02-software-architecture.jpg)
-
-###Just Enough Software Architecture
-#### A Risk-Driven Approach
+```
+$ git commit -m "Added README.md"
+```
 
 --------------------------------------------------------------------------------
 
-# What is software architecture?
+# Cloning an existing repository
+
+To get your hands on a copy of an existing repository use:
+
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+```
+
+Note that `git clone` supports several different protocols, including SSH.
 
 --------------------------------------------------------------------------------
 
-<br><br><br>
+# Git vs Svn
 
-*The highest-level breakdown of a system into its parts; the decisions that are hard to change; there are multiple architectures in a system; what is architecturally significant can change over a system's lifetime; and, in the end, architecture boils down to whatever the important stuff is.*
+Git is a *distributed* version control system:
 
-Martin Fowler's definition of Software Architecture
-
---------------------------------------------------------------------------------
-
-<br><br><br>
-
-*The fundamental organization of a system embodied in its components, their relationships to each other and to  the environment and the principles guiding its design and evolution*
-
-Software Architecture (IEEE 1471)
+* a copy of a repository can share changes with any other copy.
+* almost all commands operate on your *local copy*
+* sharing changes with others happens in two steps:
+    - commiting your changes locally
+    - pushing these changes to a remote server
 
 --------------------------------------------------------------------------------
 
-<br><br><br>
+# Git terminology
 
-*The software architecture of a computing system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both*
+![inline](img/04-git-terminology.png)
 
-Software Engineering Institute (Clements et al., 2010)
+Picture from Scott Chacon's *Pro-Git*.
 
---------------------------------------------------------------------------------
+^ Untracked -- not in the repository
 
-# Example architecture: Rackspace
+^ Unmodified -- tracked, but not modified
 
-Rackspace is a company that manages hosted email servers.
+^ Modified -- tracked and modified
 
-Engineers must search log files to diagnose problems.
-
-Rackspace developed three different versions of this tool.
+^ Staged -- modified and to be included in the next commit
 
 --------------------------------------------------------------------------------
 
-# Rackspace - I
+# Git status
 
-A shell script to ssh to each machine, and grep the mail log.
+```
+$ git status
+# On branch master
+nothing to commit (working directory clean)
 
-Engineers can use different greps to perform different queries.
+$ emacs 04-slides.md
+$ git status
 
-As the number of searches increased, overhead became noticeable.
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#   04-slides.md
+```
 
-It requires an engineer, rather than tech support to query the logs.
-
---------------------------------------------------------------------------------
-
-# Rackspace - II
-
-Move logs off email servers and make it searchable by tech support through a web interface.
-
-All logs collected on a central machine, and loaded into a database.
-
-The centralized server is constantly under heavy load, as it was constantly adding new entries.
-
-Slowdown and random failures, resulting in the loss of data.
-
+^ So we need to add 04-slides.md
 
 --------------------------------------------------------------------------------
 
-# Rackspace - III
+# Adding new files
 
-Log data saved into a distributed file system, spread over many machines, indexed in parallel.
-
-Three copies of everything, spread over different machines.
-
-Capable of handling 140 gigabytes of data generated per day, six terabytes of data total.
-
-Queries over webinterface were fast and reliable.
-
-Indexing is not cheap – logs were 15 minutes stale.
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# What do these architectures share? What makes them different?
-
-^ Quality attributes
-
-^ Scalability
-
-^ Modifiability
-
-^ Latency
-
-^ Usability
+```
+$ git add 04-slides.md
+$ git status
+# On branch master
+# Changes to be committed:
+#    (use "git reset HEAD <file>..." to unstage)
+# 
+#    new file: 04-slides.md
+```
 
 --------------------------------------------------------------------------------
 
-# Why software architecture?
+# Staging modified files
 
-### Software architecture is the skeleton of a system
 
-Your architecture defines the overall structure of your system.
+Similarly, we can stage modified files using `git add`.
 
-Your requirements and constraints determine suitable architecture.
+```
+$ emacs README.md
+$ git add README.md
+# On branch master
+# Changes to be committed:
+#    (use "git reset HEAD <file>..." to unstage)
+# 
+#    new file: 04-slides.md
+#    modified: README.md
+```
 
-Rackspace:
-
-* Powerful search tools, immediate access to logs, poor scalability.
-
-* Scales well, stale logs, limited search facilities.
-
-    --------------------------------------------------------------------------------
-
-# Why software architecture?
-
-### Architecture influences quality attributes
-
-Consider the Rackspace example again...
-
-Pretty much the same functionality implemented in three different ways.
-
-* Ease of use? (grep vs webinterface)
-
-* Scalability? (centralized vs distributed log files)
-
-* Delay? (stale, decentralized logs vs querying one machine)
+Git gives you control over which files to include in a single commit.
 
 --------------------------------------------------------------------------------
 
-# Why software architecture?
+# Pro-tip: .gitignore to minimize noise
 
-###  Architecture is (mostly) orthogonal to functionality.
+Generated binaries, documentation, and so forth are not under version control, but keep showing up when you run `git status`.
 
-There is no single 'best' architecture.
+You can have a `.gitignore` file, listing the files, directories, and patterns that you want git to ignore:
 
-There are many ways to deliver the same functionality.
-
-Depending on your needs, you need to choose the best architecture for your project.
-
---------------------------------------------------------------------------------
-
-# Why software architecture?
-
-### Architecture constrains systems
-
-You have the freedom to choose which constraints are important.
-
-* Exchanging data freely? Or only over secure connections with trusted parties?
-
-* Scalable? Or easy to set up and maintain?
-
-Your choice of architecture influences what a system can and cannot do easily.
+```
+$ cat .gitignore
+*.pdf
+.DS_Store
+build/
+```
 
 --------------------------------------------------------------------------------
 
-# Constraints
+# Committing your changes
 
-Where (non-functional) requirements and user stories specify your goal, *constraints* limit the solution space.
+The `git commit` command commits all the staged changes.
 
-* Technical: existing systems, languages used, platforms, etc.
+```
+$ git commit -m "Added 04-slides.md; updated README.md"
+[master 76d15ab] Added 04-slides.md; updated README.md
+ 1 files changed, 1 insertions(+), 0 deletions(-)
+ create mode 100644 04-slides.md
+```
 
-* Organizational: client availability, existing business processes, ...
-
-* Financial
-
-* Time
-
-^ Constraints are the invariants in the development process
-
---------------------------------------------------------------------------------
-
-# A hard truth
-
-You are not a software architect.
-
-After this course, you will still not be software architect.
-
-After the course on Software Architecture, you will still not be a software architect.
-
-Come back in twenty years.
+These changes are recorded *locally* but not yet shared with others.
 
 --------------------------------------------------------------------------------
 
-# 'Real' software architecture
+# Not mentioned
 
-Many software architecture documents are give an extensive overview of many different views of a system:
+* `git mv` to rename files, without losing their history
 
-* Physical machines running software components;
+* `git rm` to remove files from the repository
 
-* Decomposition into components and classes;
+* `git commit -a` to record all your changes to tracked files
 
-* Dynamic behaviour of processes;
+* `git log` to get an overview of recent changes
 
-* User's perspective.
-
-These documents are lengthy and complicated (and outdated).
-
-^ Software architecture is anti-agile
+* `git reset` to undo changes
 
 --------------------------------------------------------------------------------
 
-# The good news
+# Sharing your changes
 
-Your project is 'small enough' to do without a thoroughly thought out, fully-documented architecture.
+All these commands operate on your local copy of the repository.
 
-Architecture documents are too big a hammer for our projects.
+Nothing is shared with others yet.
 
-What I would encourage you to do is:
+* `git pull` – pulls in changes from some other repository
+* `git push` – pushes your changes to another repository
 
-1. Identify risks, constraints, and quality attributes.
-
-1. Make architectural decisions accordingly.
-
---------------------------------------------------------------------------------
-
-# Risk scenario
-
-![fit](img/question.jpg)
-
-One software project had to develop software to help plan where to build wind turbine parks.
-
-They were responsible for the visualization; the actual calculation and data management would be done by a third party.
-
-It was not ready yet... Integration was going to be a huge risk.
-
-**What can you do to minimize risk?**
-
-^ One solution: build a mock prototype that doesn't do any interesting calculation, but does fix the interface
+These commands communicate with *remote repositories*.
 
 --------------------------------------------------------------------------------
 
-# Strategies for dealing with risk
+# Basic usage: git push
 
-* Avoidance – take precautions: favoring stable technology, working with mocks and stubs, etc.
-
-* Minimization – share code ownership to avoid stagnation when one person is ill; creating prototypes to demo to the customer.
-
-* Contingency plans – we accept this risk, but provide an alternative: how will we reduce the scope of the project, if we realise we cannot finish on time.
-
---------------------------------------------------------------------------------
-
-# Risk identification exercise
-
-You have your MoSCoW-ed user stories. 
-
-Every team member gets 1,2,3 planning poker cards.
-
-Everyone assigns these cards to the top stories in the product backlog.
-
-Record this risk-value assessment.
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+...
+$ emacs 04-slides.md
+$ git commit -am "Updated slides on git"
+$ git push
+```
 
 --------------------------------------------------------------------------------
 
-# Risk identification exercise
+# Showing remote repositories
 
-Discuss the results of identifying the high-risk stories:
-
-* How will you cope with this risk?
-
-* What new stories will you introduce?
-
-* How does this insight effect the priorities in your backlog?
-
---------------------------------------------------------------------------------
-
-# Where to start?
-
-![fit](img/question.jpg)
-
-<br><br>
-
-Start with high-value stories.
-
-But should you focus on high-risk or low-risk stories?
+```
+$ git clone git://github.com/wouter-swierstra/SoftwareProject
+...
+$ git remote -v
+origin	git://github.com/wouter-swierstra/SoftwareProject (push)
+origin	git://github.com/wouter-swierstra/SoftwareProject (fetch)
+```
 
 --------------------------------------------------------------------------------
 
-# Where to start?
+# Pull changes from remote repositories
 
-<br><br>
-
-![fit](img/question.jpg)
-
-Start with high-value stories.
-
-But should you focus on high-risk or low-risk stories?
-
-**High-risk stories have priority.**
-
---------------------------------------------------------------------------------
-
-# Quality attributes
-
-There are huge catalogs of *software quality attributes*, describing the non-functional properties of software systems.
-
-These are typically not documented in user stories.
-
-But your system does have non-functional requirements.
-
-These non-functionals are need to be baked into your architecture from the start – adding them as an afterthought can be very difficult.
+```
+$ git pull
+remote: Counting objects: 45, done.
+remote: Total 45 (delta 2), reused 2 (delta 2), pack-reused 43
+Unpacking objects: 100% (45/45), done.
+From https://git.science.uu.nl/swier004/my-repository
+   543d40c..8497463  master     -> origin/master
+ * [new branch]      redirect   -> origin/redirect
+Updating 543d40c..8497463
+Fast-forward
+...
+```
 
 --------------------------------------------------------------------------------
 
-# Example: security
+# The real challenge
 
-Suppose your system must handle data that you must keep private.
+This covers the very basic `git` operations.
 
-There are several *architectural tactics* to help achieve this:
+You can now collaborate on a single codebase.
 
-* Authentication - negative impact on usability
-
-* Encryption - negative impact on performance (and possibly usability)
-
-* Limit access through firewalls – negative impact on availability
+But collaborating *effectively* is not easy.
 
 --------------------------------------------------------------------------------
 
-# Example: availability
+# GitLab
 
-Similarly, if your system *must* be available at all times:
+The university provides a repository hosting service, GitLab:
 
-* Fault detection:  Ping, heartbeat, etc.
+* Repository
+* Issue tracker
+* Wiki
+* Useful graphical interface
 
-* Fault recovery: voting/polling, active redundancy (hot restart), passive redundancy (warm restart), spare servers, etc.
-
-* Fault prevention: checksums, error detection, etc.
-
---------------------------------------------------------------------------------
-
-# Quality attributes
-
-There is always the temptation to read through a list of quality attributes and select an arbitrary number of properties you consider to be important.
-
-Don't treat quality attributes like your Christmas wishlist.
-
-If someone is holding a gun to your head, which is more important:
-
-* security or usability? (How much authentication will we do?)
-
-* flexibility or scalability? (Distributed Rackspace servers or not?)
+Many complex, yet common, operations can be done through the GitLab GUI.
 
 --------------------------------------------------------------------------------
 
-![fit](img/question.jpg)
-
-# Why can your project fail?
-
-# What are you going to do about it?
+# [Gitlab](http://git.science.uu.nl)
 
 --------------------------------------------------------------------------------
 
-# Meta-retrospective
+# Branching
 
-You now know all you need to know to self-organize your team and plan your software project.
+Git makes it *very easy* to work on different versions of your software.
 
-The Scrum/Agile approach is probably the most popular software development methodology at the moment.
+Use branches to isolate different all the stories being developed in an iteration.
 
-Does everyone agree that they work?
+Create one branch per story at the beginning of the iteration.
 
---------------------------------------------------------------------------------
-
-# Bertrand Meyer
-
-## Agile! The Good, the Hype and the Ugly
-
-### E-book available in the library
-
-![left fit](img/03-meyer-agile.pdf)
+Merge each branch back to master at the end of the iteration.
 
 --------------------------------------------------------------------------------
 
-# Meyer: the bad and the ugly
+# Golden rules
 
-* Rejection of any upfront tasks
+1. The master branch may only contain code that is tested, reviewed and ready to be released.
 
-* User stories of only requirements – resulting software may be hard to adapt and you might miss other important features.
+1. Only commit code that compiles, even in experimental branches.
 
-* Feature based development ignores foundation work
+1. No branch lives more than three iterations
+(the master branch excluded).
 
---------------------------------------------------------------------------------
-
-# Meyer: the hyped
-
-* There is no credible evidence that pair programming works
-
-* Few teams are experienced enough to be self-organizing
-
-* Planning poker may drown the voice of the experts
-
-* Cross-functional teams ignore individuals
+1. Create pull requests for every new branch. Only merge your changes if everyone is happy.
 
 --------------------------------------------------------------------------------
 
-# Meyer: the good & brilliant
+![fit inline](img/04-andy.png)
 
-* Short daily meetings
-
-* Refactoring is important (but cannot replace design)
-
-* Continuous integration and regression testing
-
-* Short-time boxed iterations
-
-* Refining working software 
+^ Don't be like Andy
 
 --------------------------------------------------------------------------------
 
-# Erik Meijer
+# Working with merge requests
 
-#[Software is eating the world](https://vimeo.com/110554082)
+Create branch with your feature new feature
+```
+git checkout -b new_feature
+...
+git commit -am "My feature is ready"
+git push origin new_feature
+```
 
---------------------------------------------------------------------------------
+Create a merge request from this commit.
 
-![fit](img/question.jpg)
-
-# Do you agree with Erik?
-
---------------------------------------------------------------------------------
-
-![fit](img/question.jpg)
-
-# Rewatch his video after the project.
-
-# Do you still agree or disagree?
+Members of your team can review the code & merge it with main.
 
 --------------------------------------------------------------------------------
 
-# Homework - I
-
-* Identify the high-risk high-value stories.
-
-* What non-engineering risks can you identify? How will you handle them? Fill your product backlog accordingly.
-
-* What constraints can you identify?
+# [Merge requests demo](https://www.youtube.com/watch?v=raXvuwet78M)
 
 --------------------------------------------------------------------------------
 
-# Homework - II
+# Working with merge requests
 
-*  Look at the [lists of quality attributes](http://en.wikipedia.org/wiki/List_of_system_quality_attributes):   
-    * Which are crucial for your project?
-    * How big is the associated risk?
-    * What decisions need to be made to handle this risk?
-    * Which architectural patterns or tactics can help?
-    * Which other quality attributes may be negatively affected by these decisions? Is that a problem?
+One or two people responsible for merging branches with main.
+
+Before a branch is merged with the main branch, there should be a code review.
+
+Use the forum for discussion if there are issues with the
+implementation, execution, tests, etc.
 
 --------------------------------------------------------------------------------
 
-# Next time: your presentations!
+# Code reviews
+
+* Does the code work?
+
+* Is it easy to understand and clearly structured?
+
+* Does it adhere to coding conventions?
+
+* Are there comments?
+
+* Are there any open TODOs or obviously unfinished methods?
+
+* Is there an automated test for this feature/bug?
+
+--------------------------------------------------------------------------------
+
+# Code reviews
+
+If the answer to any of these questions is no – don't merge.
+
+Merging with master exposes your work to the rest of the team.
+
+Breaking their work means wasting *everybody's* time.
+
+*Investing in quality assurance now will be invaluable later.*
+
+--------------------------------------------------------------------------------
+
+# Writing good comments
+
+* Don't explain obvious details, instead focus on the key ideas.
+
+    - Bad: `\\This for loop iterates over the array`
+    - Better: `\\This method computes the sum of a non-empty array storing positive integers`
+
+* Document invariants, assumptions, unusual behaviour and corner cases.
+
+* Explain the design decisions you made that lead to this code.
+
+--------------------------------------------------------------------------------
+
+# Writing good comments
+
+* The goal is not to explain the micro-details on every line of code...
+
+* ... but rather to help a new reader understand the big picture of what is going on.
+
+--------------------------------------------------------------------------------
+
+# Further reading
+
+* [Lessons in software development](http://henrikwarne.com/2015/04/16/lessons-learned-in-software-development/)
+
+* [Pro-git](http://git-scm.com/book/en/v2)
+
+* [A tutorial on merge requests and issues in Gitlab](https://youtu.be/raXvuwet78M)
+
+* [GitLab introduction videos on Youtube](https://www.youtube.com/channel/UCnMGQ8QHMAnVIsI3xJrihhg)
+
+--------------------------------------------------------------------------------

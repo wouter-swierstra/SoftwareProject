@@ -1,6 +1,7 @@
 footer: Software project – Lecture 4
 slidenumbers: true
 
+
 # Software Project
 ### Lecture 4
 
@@ -12,766 +13,582 @@ slidenumbers: true
 
 <br><br><br>
 
-* Risks
+* Establishing a product backlog
+
+* Planning iterations
+
+--------------------------------------------------------------------------------
+
+# Today
+
+<br><br><br>
+
+* Risks, constraints, and quality attributes
 
 * Software architecture
 
 --------------------------------------------------------------------------------
 
-## Working effectively with git and GitHub.
+# In a few days...
+
+* You have a prioritized product backlog.
+
+* You've had a planning session to fill your first sprint backlog.
+
+* You're aiming to develop a first prototype in the first iterations.
+
+What can possibly go wrong?
 
 --------------------------------------------------------------------------------
 
-# Collaborative software development
+# Risk
 
-<br>
+## What is your marshmallow?
 
-You have two weeks to finish your user stories.
-
-And need to give a demo at the end.
-
-## How can you develop different stories in parallel without breaking your working prototype?
+![](img/01-marshmallow.jpeg)
 
 --------------------------------------------------------------------------------
 
-# Version control
+# Risks
+
+**Risk** is determined by perceived probability and perceived impact.
+
+It is impossible to accurately estimate either factor.
+
+Instead use this to decide the risks on which to focus.
+
+* It is very likely that you will get your estimates wrong for the first sprint. This isn't so bad.
+
+* If the UU server's disk crashes, you could lose all your work. This is highly unlikely.
 
 --------------------------------------------------------------------------------
 
-# What is git?
+# Risk assessment for software projects
 
-* A popular, powerful distributed file version control system
-* It is free and obtainable from [git-scm.com](http://git-scm.com)
-* Originally developed to manage the Linux kernel
-* An estimated 27 percent of professional developers uses Git (May '12).
+* You have little experience working in a team;
 
---------------------------------------------------------------------------------
+* You are exposed to unfamiliar technology;
 
-# Getting to grips with git
+* You have to work in an unfamiliar domain;
 
-* Git is a very powerful tool with many different features.
+* Besides the project, you all have other courses, jobs, etc.
 
-* The user interface takes some getting used to...
-
-* When used correctly, it can be extremely effective.
-
-* If you screw up, there is usually a way to undo your changes.
-
-^ StackOverflow!
+You *cannot* change this, but you *can* act accordingly.
 
 --------------------------------------------------------------------------------
 
-# Starting a new repo
+# About risk
 
-```
-$ git init
-Initialized empty Git repository in .git/
-```
+As computer scientists, we are trained to focus on *technical risk*
 
-Add the README.md file to the repository
+* How to implement feature X? 
 
-```
-$ git add README.md
-```
+* How to interface with system Y? 
 
-Commit the changes you made to README.md
+* How to call library Z?
 
-```
-$ git commit -m "Added README.md"
-```
+Sometimes the important risk is *not* in the technical part.
+
+^ Example: restaurant-dating website
 
 --------------------------------------------------------------------------------
 
-# Cloning an existing repository
+# Non-engineering risks
 
-To get your hands on a copy of an existing repository use:
+* "The lead developer's hobbies are base-jumping and cage fighting."
 
-```
-$ git clone git://github.com/wouter-swierstra/SoftwareProject
-```
+* "Senior VP hates our manager."
 
-Note that `git clone` supports several different protocols, including SSH.
+* "The customer doesn't know what he wants."
 
---------------------------------------------------------------------------------
-
-# Git vs Svn
-
-Git is a *distributed* version control system:
-
-* a copy of a repository can share changes with any other copy.
-* almost all commands operate on your *local copy*
-* sharing changes with others happens in two steps:
-    - commiting your changes locally
-    - pushing these changes to a remote server
+* "Bob and Alice refuse to work together."
 
 --------------------------------------------------------------------------------
 
-# Git terminology
-
-![inline](img/04-git-terminology.png)
-
-Picture from Scott Chacon's *Pro-Git*.
-
-^ Untracked -- not in the repository
-
-^ Unmodified -- tracked, but not modified
-
-^ Modified -- tracked and modified
-
-^ Staged -- modified and to be included in the next commit
+# But that won't happen to us.
 
 --------------------------------------------------------------------------------
 
-# Git status
+# Risks: example
 
-```
-$ git status
-# On branch master
-nothing to commit (working directory clean)
+In a recent project there was an outspoken student who strongly pushed technology X.
 
-$ emacs 04-slides.md
-$ git status
+When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
 
-# On branch master
-# Untracked files:
-#   (use "git add <file>..." to include in what will be committed)
-#
-#   04-slides.md
-```
-
-^ So we need to add 04-slides.md
+^ Let's say X is Haskell.
 
 --------------------------------------------------------------------------------
 
-# Adding new files
+# Risks: example
 
-```
-$ git add 04-slides.md
-$ git status
-# On branch master
-# Changes to be committed:
-#    (use "git reset HEAD <file>..." to unstage)
-# 
-#    new file: 04-slides.md
-```
+In a recent project there was an outspoken student who strongly pushed technology X.
+
+When I asked them about their choice for X, they list the 'standard' advantages of using X, but hadn't thought about whether it was the right tool for this project.
+
+This student abandoned the software project halfway through. The remaining students threw away their code and started from scratch.
 
 --------------------------------------------------------------------------------
 
-# Staging modified files
+# The bottom line
 
+<br><br><br>
 
-Similarly, we can stage modified files using `git add`.
+You need to **identify risks**...
 
-```
-$ emacs README.md
-$ git add README.md
-# On branch master
-# Changes to be committed:
-#    (use "git reset HEAD <file>..." to unstage)
-# 
-#    new file: 04-slides.md
-#    modified: README.md
-```
+... and take decisions to minimize them.
 
-Git gives you control over which files to include in a single commit.
+... many of these decisions are *architectural*.
 
---------------------------------------------------------------------------------
+ --------------------------------------------------------------------------------
 
-# Pro-tip: .gitignore to minimize noise
+![right fit](img/02-software-architecture.jpg)
 
-Generated binaries, documentation, and so forth are not under version control, but keep showing up when you run `git status`.
-
-You can have a `.gitignore` file, listing the files, directories, and patterns that you want git to ignore:
-
-```
-$ cat .gitignore
-*.pdf
-.DS_Store
-build/
-```
+###Just Enough Software Architecture
+#### A Risk-Driven Approach
 
 --------------------------------------------------------------------------------
 
-# Committing your changes
-
-The `git commit` command commits all the staged changes.
-
-```
-$ git commit -m "Added 04-slides.md; updated README.md"
-[master 76d15ab] Added 04-slides.md; updated README.md
- 1 files changed, 1 insertions(+), 0 deletions(-)
- create mode 100644 04-slides.md
-```
-
-These changes are recorded *locally* but not yet shared with others.
+# What is software architecture?
 
 --------------------------------------------------------------------------------
 
-# Not mentioned
+<br><br><br>
 
-* `git mv` to rename files, without losing their history
+*The highest-level breakdown of a system into its parts; the decisions that are hard to change; there are multiple architectures in a system; what is architecturally significant can change over a system's lifetime; and, in the end, architecture boils down to whatever the important stuff is.*
 
-* `git rm` to remove files from the repository
-
-* `git commit -a` to record all your changes to tracked files
-
-* `git log` to get an overview of recent changes
-
-* `git reset` to undo changes
+Martin Fowler's definition of Software Architecture
 
 --------------------------------------------------------------------------------
 
-# Sharing your changes
+<br><br><br>
 
-All these commands operate on your local copy of the repository.
+*The fundamental organization of a system embodied in its components, their relationships to each other and to  the environment and the principles guiding its design and evolution*
 
-Nothing is shared with others yet.
-
-* `git pull` – pulls in changes from some other repository
-* `git push` – pushes your changes to another repository
-
-These commands communicate with *remote repositories*.
+Software Architecture (IEEE 1471)
 
 --------------------------------------------------------------------------------
 
-# Basic usage: git push
+<br><br><br>
 
-```
-$ git clone git://github.com/wouter-swierstra/SoftwareProject
-...
-$ emacs 04-slides.md
-$ git commit -am "Updated slides on git"
-$ git push
-```
+*The software architecture of a computing system is the set of structures needed to reason about the system, which comprise software elements, relations among them, and properties of both*
+
+Software Engineering Institute (Clements et al., 2010)
 
 --------------------------------------------------------------------------------
 
-# Showing remote repositories
+# Example architecture: Rackspace
 
-```
-$ git clone git://github.com/wouter-swierstra/SoftwareProject
-...
-$ git remote -v
-origin	git://github.com/wouter-swierstra/SoftwareProject (push)
-origin	git://github.com/wouter-swierstra/SoftwareProject (fetch)
-```
+Rackspace is a company that manages hosted email servers.
+
+Engineers must search log files to diagnose problems.
+
+Rackspace developed three different versions of this tool.
 
 --------------------------------------------------------------------------------
 
-# Push
+# Rackspace - I
+
+A shell script to ssh to each machine, and grep the mail log.
+
+Engineers can use different greps to perform different queries.
+
+As the number of searches increased, overhead became noticeable.
+
+It requires an engineer, rather than tech support to query the logs.
 
 --------------------------------------------------------------------------------
 
-# Pull
+# Rackspace - II
 
---------------------------------------------------------------------------------
+Move logs off email servers and make it searchable by tech support through a web interface.
 
-# The real challenge
+All logs collected on a central machine, and loaded into a database.
 
-This covers the very basic `git` operations.
+The centralized server is constantly under heavy load, as it was constantly adding new entries.
 
-You can now collaborate on a single codebase.
-
-But collaborating *effectively* is not easy.
-
---------------------------------------------------------------------------------
-
-# Branching
-
-Git makes it *very easy* to work on different versions of your software.
-
---------------------------------------------------------------------------------
-
-# Golden rules
-
-1. The master branch may only contain code that is tested, reviewed and ready to be released.
-
-1. Only commit code that compiles, even in experimental branches.
-
-1. No branch lives more than three iterations
-(the master branch excluded).
-
-1. Create pull requests for every new branch. Only merge your changes if everyone is happy.
-
---------------------------------------------------------------------------------
-
-![fit inline](img/04-andy.png)
-
-^ Don't be like Andy
-
---------------------------------------------------------------------------------
-
-* Tagging end-of-sprint demos
-
-```
-$ git
-```
-
-* 
-
---------------------------------------------------------------------------------
-
-# GitHub
-
-* Repository
-* Issue tracker
-* Wiki
-* Useful graphical interface
-
---------------------------------------------------------------------------------
-
+Slowdown and random failures, resulting in the loss of data.
 
 
 --------------------------------------------------------------------------------
 
-# Further reading
+# Rackspace - III
 
-* [Pro-git](http://git-scm.com/book/en/v2)
+Log data saved into a distributed file system, spread over many machines, indexed in parallel.
 
+Three copies of everything, spread over different machines.
 
-git diff
-git log
+Capable of handling 140 gigabytes of data generated per day, six terabytes of data total.
 
-\begin{frame}[fragile]
-  \frametitle{As you construct the commit}
-  \begin{itemize}
-    \item After a commit Index and the HEAD are identical
-    \item As you \code{add} and \code{rm}, Index starts to deviate
-      from the HEAD.
-\begin{notitleblock}    
-\begin{verbatim}
-$ git diff --cached # See what has changed
-diff --git a/.gitignore b/.gitignore
-index 2a85b92..0c85339 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -1,3 +1,4 @@
- dist/*
- build/*
-+.svn      
-\end{verbatim}
-\end{notitleblock}
-    \item After commit, HEAD := Index
-    \item \verb|git diff| shows changes that will not be committed
-   %  \item \verb|git status| gives a brief per-file summary of the above
-  \end{itemize}
-\end{frame}
- 
-\begin{frame}
-  \frametitle{How do we stand? (part 1)}
-  \begin{itemize}
-    \item Run \code{gitk}. 
-  \end{itemize}  
-  \includegraphics[width=10cm]{gitkscreen1.png}
-\end{frame}
+Queries over webinterface were fast and reliable.
 
-\begin{frame}[fragile]
-  \frametitle{Exploring the history}
-  \begin{itemize}
-    \item To find out what the latest commit was: \code{git show}
-\begin{notitleblock}
-\begin{verbatim}
-commit 28cbe84da2877dc91ceeeb50755c74e84cdd9fc7
-Author: Jurriaan Hage <jur@cs.uu.nl>
-Date:   Thu Feb 28 10:48:45 2013 +0100
+Indexing is not cheap – logs were 15 minutes stale.
 
-    Added .svn to ignore
+--------------------------------------------------------------------------------
 
-diff --git a/.gitignore b/.gitignore
-index 2a85b92..0c85339 100644
---- a/.gitignore
-+++ b/.gitignore
-@@ -1,3 +1,4 @@
- dist/*
- build/*
-+.svn
-\end{verbatim}
-\end{notitleblock}
-  \end{itemize}
-\end{frame}
+![fit](img/question.jpg)
 
-\begin{frame}[fragile]
-  \frametitle{Commits}
-  \begin{itemize}
-    \item All commits are identified with a 40-hexdigit id, 
-        28cbe84da2877dc91ceeeb50755c74e84cdd9fc7 
-        (aka object name, aka SHA-1 id)
-    \item It is a hash of the contents of the commit.
-    \item Chance that it is not globally unique is microscopically small.
-  \end{itemize}
-\end{frame}
+# What do these architectures share? What makes them different?
 
-\begin{frame}[fragile]
-  \frametitle{Tags}
-  \begin{itemize}
-    \item You can name these things:
-\begin{notitleblock}
-\begin{verbatim}
-git tag readytogo
-    28cbe84da2877dc91ceeeb50755c74e84cdd9fc7
- \end{verbatim}
-\end{notitleblock}   
-    \item To include more information with the reference, create a 
-       \emph{tag object}
-    \item Use tags to designate specific versions of the
-      software system that you have released.
-    \item As you commit, the HEAD moves forward to the new commit, but 
-       tags stay put.
-  \end{itemize}
-\end{frame}
+^ Quality attributes
 
-\begin{frame}
-  \frametitle{How do we stand? (part 2)}
-  \includegraphics[width=9.5cm]{gitkscreen2.png}
-  \single{Note the parent and child reference, and the yellow tag.}
-\end{frame}
+^ Scalability
 
-\begin{frame}[fragile]
-  \frametitle{Browsing the repo}
-\begin{notitleblock}
-\begin{verbatim}
-$ git log   # all commits
-$ git log v2.6.15..v2.6.16  # ...in v2.6.16, not in v2.6.15
-$ git log test..master  # commits reachable from master but not test
-$ git log --since="2 weeks ago" # commits from the last 2 weeks
-$ git log Makefile      # commits which modify Makefile
-$ git log src/     # commits which modify any file under src/
-$ git show v2.6.15:a.txt  # look at v2.6.15 version of a.txt
-$ git diff v2.6.15..HEAD    # diff with current head
-$ git diff v2.6.15..v2.6.16  # diff between two tags
-$ git grep "foo()"    # search working directory for "foo()"
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
+^ Modifiability
 
-\begin{frame}[fragile]
-  \frametitle{Making a tarball}
-\begin{notitleblock}
-\begin{verbatim}
-$ git archive --format=tar --prefix=project/ HEAD | 
-      gzip >latest.tar.gz
-$ tar tfz latest.tar.gz
-project/
-project/.gitignore
-project/README
-project/src/
-project/src/Onlyloc.ag
-project/src/Onlyloc.hs
-project/src/Onlyloc.hs.visage
-project/src/TODO
-project/src/Test.ag
-project/src/Test.hs
-...
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
+^ Latency
 
-\begin{frame}[fragile]
-  \frametitle{Branches}
-  \begin{itemize}
-    \item Development is not straight-line, but branching is natural    
-    \item The master is by convention (like trunk in svn):
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch
-* master
-\end{verbatim} % $
-\end{notitleblock}
-  \end{itemize}
-\end{frame}
+^ Usability
 
+--------------------------------------------------------------------------------
 
-\begin{frame}[fragile]
-  \frametitle{Going experimental}
-Create a new branch of the HEAD, to try out something new
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch experimental
-$ git branch
-  experimental
-* master
+# Why software architecture?
 
-# Variants:
-$ git branch new v2.6.15 # tag named v2.6.15
-$ git branch new HEAD^ # commit before the most recent
-$ git branch new HEAD^^  # the one before that
-$ git branch new test~10 # ten commits before 
-                         # tip of branch "test"
-\end{verbatim}
-\end{notitleblock}  
-\end{frame}
+### Software architecture is the skeleton of a system
 
-\begin{frame}
-  \frametitle{How do we stand? (part 3)}
-  \includegraphics[width=9.5cm]{gitkscreen3.png}
-  \single{Note the additional branch in green}
-\end{frame}
+Your architecture defines the overall structure of your system.
 
-\begin{frame}[fragile]
-  \frametitle{Changes to the (active) master branch}
-\begin{notitleblock}
-\begin{verbatim}
-$ git rm -r workinprogress/
-$ git commit
-[master 92e269c] In the master branch, work in progress 
- is not needed
- 1 file changed, 63 deletions(-)
- delete mode 100644 workinprogress/AttributeFrame.java
-\end{verbatim}
-\end{notitleblock}  
-\end{frame}
+Your requirements and constraints determine suitable architecture.
 
-\begin{frame}
-  \frametitle{How do we stand? (part 4)}
-  \includegraphics[width=9.5cm]{gitkscreen4.png}
-  \single{Note that master moved on, but experimental did not}
-\end{frame}
+Rackspace:
 
-\begin{frame}[fragile]
-  \frametitle{Switching branches}
-\noindent Switch to the experimental branch:
-\begin{notitleblock}
-\begin{verbatim}
-$ git checkout experimental
-Switched to branch 'experimental'
-$ git branch
-* experimental
-  master
-\end{verbatim}
-\end{notitleblock} 
-\end{frame}
+* Powerful search tools, immediate access to logs, poor scalability.
 
-\begin{frame}
-  \frametitle{How do we stand? (part 5)}
-  \includegraphics[width=9.5cm]{gitkscreen5.png}
-  \single{Note the red uncommitted changes warning (after changing
-  a Java source file)}
-\end{frame}
+* Scales well, stale logs, limited search facilities.
 
-\begin{frame}
-  \frametitle{How do we stand? (part 6)}
-  \single{After a \code{git commit -a} all is peachy:}
-  \includegraphics[width=9.5cm]{gitkscreen6.png}
-\end{frame}
+    --------------------------------------------------------------------------------
 
-\begin{frame}[fragile]
-  \frametitle{Switch back to the master}
-\noindent Switch to the experimental branch:
-\begin{notitleblock}
-\begin{verbatim}
-$ git checkout master
-Switched to branch 'master'
-$ git branch
-  experimental
-* master
-\end{verbatim}
-\end{notitleblock} 
-\single{\code{workinprogress} directory is empty!}
-\end{frame}
+# Why software architecture?
 
-\begin{frame}[fragile]
-  \frametitle{Merge experimental back in}
-\begin{notitleblock}
-\begin{verbatim}
-$ git merge experimental
-CONFLICT (modify/delete): 
-workinprogress/AttributeFrame.java deleted in HEAD 
-and modified in experimental. Version experimental 
-of workinprogress/AttributeFrame.java left in tree.
-Automatic merge failed; fix conflicts and then commit the result.
-\end{verbatim}
-\end{notitleblock} 
-\single{\code{workinprogress} directory is not empty anymore!}
-\end{frame}
+### Architecture influences quality attributes
 
-\begin{frame}[fragile]
-  \frametitle{Revolving the conflict}
-  \begin{itemize}
-    \item No need to edit the file, since I want to keep it whole:
-  \end{itemize}  
-\begin{notitleblock}
-\begin{verbatim}
-$ git commit -a
-[master ebca5c1] Merge branch 'experimental'
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
+Consider the Rackspace example again...
 
-\begin{frame}
-  \frametitle{How do we stand? (part 7)}
-  \single{Note the two parents (because of the merge):}
-  \includegraphics[width=9.5cm]{gitkscreen7.png}
-\end{frame}
+Pretty much the same functionality implemented in three different ways.
 
-\begin{frame}
-  \frametitle{Up to now...}
-  \begin{itemize}
-    \item we have kept track of our own changes:
-       commit and checkout HEAD move data between the local
-       repo and the working directory
-    \item So what about sharing work with others?
-  \end{itemize}  
-\end{frame}
+* Ease of use? (grep vs webinterface)
 
+* Scalability? (centralized vs distributed log files)
 
-\begin{frame}
-  \frametitle{A (simplified) overview of the general set-up}
-  \begin{center}
-  \includegraphics[height=5.5cm]{GitDataFlowSimplified.png}
-  (From Wikipedia)
-  \end{center}
-\end{frame}
+* Delay? (stale, decentralized logs vs querying one machine)
 
+--------------------------------------------------------------------------------
 
-\begin{frame}[fragile]
-  \frametitle{Check out a remote repository}
-\begin{notitleblock}
-\begin{verbatim}
-git clone git://git.kernel.org/pub/scm/git/git.git
-cd git
-\end{verbatim} % $
-\end{notitleblock}
-\end{frame}
+# Why software architecture?
 
+###  Architecture is (mostly) orthogonal to functionality.
 
-\begin{frame}[fragile]
-  \frametitle{Doing updates (also remote)}
-  \begin{itemize}
-    \item \code{git fetch} does an update from the repo's you cloned
-      from.
-    \item Also for remote branches:
-\begin{notitleblock}
-\begin{verbatim}
-$ git remote add linux-nfs \
-     git://linux-nfs.org/pub/nfs-2.6.git
-$ git remote add gitself \ 
-     git://git.kernel.org/pub/scm/git/git.git
-$ git fetch gitself   # update from remote
-$ git remote
-gitself
-linux-nfs
-$ git remote remove linux-nfs # Changed my mind
-\end{verbatim} % $
-\end{notitleblock}  
-      
-  \end{itemize}
-\end{frame}
+There is no single 'best' architecture.
 
-\begin{frame}[fragile]
-  \frametitle{Merging} 
-  \begin{itemize}
-    \item Now we  have fetched gitself, and want to merge its 
-       \verb|master| branch into our current branch
-    \item Merge may lead to numerous merge actions on your part
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch
-  experimental
-* master
-$ git branch -r
-  gitself/maint
-  gitself/master  # This is the one we want
-  ...
-$ git merge gitself/master # merge into current branch
-$ edit README
-$ edit .gitignore
-$ git add README .gitignore
-$ git commit    # merge commited after resolving conflicts 
-\end{verbatim}
-\end{notitleblock}   
-\end{frame}
+There are many ways to deliver the same functionality.
 
-\begin{frame}
-  \frametitle{How do we stand? (part 8)}
-  \single{After this large merge:}
-  \vspace*{-0.5cm}
-  \includegraphics[width=9.5cm]{gitkscreen8.png}
-\end{frame}
+Depending on your needs, you need to choose the best architecture for your project.
 
-\begin{frame}[fragile]
-  \frametitle{Pull}
-  \begin{itemize}
-    \item Often we want to combine \verb|fetch| with \verb|merge|, and for that
-      you can use \verb|pull|
-    \item 
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git pull . gitself/master
-$ git pull     # if the remote branch is ``tracked''
-\end{verbatim}
-\end{notitleblock}
-To employ tracking, 
-\begin{notitleblock}
-\begin{verbatim}
-$ git branch --track gitmaster gitself/master
-$ git checkout gitmaster   # Switch to gitmaster
-$ git pull   # Get the latest from remote and merge it in
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
+--------------------------------------------------------------------------------
 
-\begin{frame}[fragile]
-  \frametitle{Sharing changes with others}
-  \begin{itemize}
-    \item Make patches available to others by mail
-    \item Or use push and pull. For push you need
-      write access to that repo.
-  \end{itemize}
-\begin{notitleblock}
-\begin{verbatim}
-$ git format-patch origin..HEAD   
-$ git am mbox 
-    # import patches from the mailbox "mbox"
-\end{verbatim}
-\end{notitleblock}
-\end{frame}
+# Why software architecture?
 
-\begin{frame}[fragile]
-  \frametitle{Not covered}
-  \begin{itemize}
-    \item garbage collection \verb|$ git gc|
-    \item check repo \verb|$ git fsck|
-    \item packing
-    \item dangling objects
-    \item submodules
-  \end{itemize}
-\end{frame}
+### Architecture constrains systems
 
-\begin{frame}\frametitle{Git hosting}
-  There are plenty of (free) options for hosting a git repository.
-  \begin{itemize}
-  \item GitHub is probably the most famous
-    \begin{itemize}
-    \item Lots of users, great community;
-    \item Limits on private repositories;
-    \item Great place to host open source projects.
-    \end{itemize}
-  \item Bitbucket 
-    \begin{itemize}
-    \item Supports Mercurial and Git;
-    \item Similar features to Github, different pricing model.
-    \end{itemize}
-  \item ... and lots of others.
-  \item It's worth exploring which option works for you.
-  \end{itemize}
-\end{frame}
+You have the freedom to choose which constraints are important.
 
-\begin{frame}\frametitle{Why use a hosting website?}
-  \begin{itemize}
-  \item No need to set up your own server;
-  \item Provides free wiki and bug tracker.
-  \item Use them!
-  \item Wikis are a cheap way to record information like requirements,
-    iteration info, a glossary, etc.
-  \item Use the bug tracker for your product backlog.
-  \item Both need maintainence!
-  \end{itemize}
-\end{frame}
+* Exchanging data freely? Or only over secure connections with trusted parties?
 
+* Scalable? Or easy to set up and maintain?
 
+Your choice of architecture influences what a system can and cannot do easily.
 
+--------------------------------------------------------------------------------
 
+# Constraints
 
+Where (non-functional) requirements and user stories specify your goal, *constraints* limit the solution space.
+
+* Technical: existing systems, languages used, platforms, etc.
+
+* Organizational: client availability, existing business processes, ...
+
+* Financial
+
+* Time
+
+^ Constraints are the invariants in the development process
+
+--------------------------------------------------------------------------------
+
+# A hard truth
+
+You are not a software architect.
+
+After this course, you will still not be software architect.
+
+After the course on Software Architecture, you will still not be a software architect.
+
+Come back in twenty years.
+
+--------------------------------------------------------------------------------
+
+# 'Real' software architecture
+
+Many software architecture documents are give an extensive overview of many different views of a system:
+
+* Physical machines running software components;
+
+* Decomposition into components and classes;
+
+* Dynamic behaviour of processes;
+
+* User's perspective.
+
+These documents are lengthy and complicated (and outdated).
+
+^ Software architecture is anti-agile
+
+--------------------------------------------------------------------------------
+
+# The good news
+
+Your project is 'small enough' to do without a thoroughly thought out, fully-documented architecture.
+
+Architecture documents are too big a hammer for our projects.
+
+What I would encourage you to do is:
+
+1. Identify risks, constraints, and quality attributes.
+
+1. Make architectural decisions accordingly.
+
+--------------------------------------------------------------------------------
+
+# Risk scenario
+
+![fit](img/question.jpg)
+
+One software project had to develop software to help plan where to build wind turbine parks.
+
+They were responsible for the visualization; the actual calculation and data management would be done by a third party.
+
+It was not ready yet... Integration was going to be a huge risk.
+
+**What can you do to minimize risk?**
+
+^ One solution: build a mock prototype that doesn't do any interesting calculation, but does fix the interface
+
+--------------------------------------------------------------------------------
+
+# Strategies for dealing with risk
+
+* Avoidance – take precautions: favoring stable technology, working with mocks and stubs, etc.
+
+* Minimization – share code ownership to avoid stagnation when one person is ill; creating prototypes to demo to the customer.
+
+* Contingency plans – we accept this risk, but provide an alternative: how will we reduce the scope of the project, if we realise we cannot finish on time.
+
+--------------------------------------------------------------------------------
+
+# Risk identification exercise
+
+You have your MoSCoW-ed user stories. 
+
+Every team member gets 1,2,3 planning poker cards.
+
+Everyone assigns these cards to the top stories in the product backlog.
+
+Record this risk-value assessment.
+
+--------------------------------------------------------------------------------
+
+# Risk identification exercise
+
+Discuss the results of identifying the high-risk stories:
+
+* How will you cope with this risk?
+
+* What new stories will you introduce?
+
+* How does this insight effect the priorities in your backlog?
+
+--------------------------------------------------------------------------------
+
+# Where to start?
+
+![fit](img/question.jpg)
+
+<br><br>
+
+Start with high-value stories.
+
+But should you focus on high-risk or low-risk stories?
+
+--------------------------------------------------------------------------------
+
+# Where to start?
+
+<br><br>
+
+![fit](img/question.jpg)
+
+Start with high-value stories.
+
+But should you focus on high-risk or low-risk stories?
+
+**High-risk stories have priority.**
+
+--------------------------------------------------------------------------------
+
+# Quality attributes
+
+There are huge catalogs of *software quality attributes*, describing the non-functional properties of software systems.
+
+These are typically not documented in user stories.
+
+But your system does have non-functional requirements.
+
+These non-functionals are need to be baked into your architecture from the start – adding them as an afterthought can be very difficult.
+
+--------------------------------------------------------------------------------
+
+# Example: security
+
+Suppose your system must handle data that you must keep private.
+
+There are several *architectural tactics* to help achieve this:
+
+* Authentication - negative impact on usability
+
+* Encryption - negative impact on performance (and possibly usability)
+
+* Limit access through firewalls – negative impact on availability
+
+--------------------------------------------------------------------------------
+
+# Example: availability
+
+Similarly, if your system *must* be available at all times:
+
+* Fault detection:  Ping, heartbeat, etc.
+
+* Fault recovery: voting/polling, active redundancy (hot restart), passive redundancy (warm restart), spare servers, etc.
+
+* Fault prevention: checksums, error detection, etc.
+
+--------------------------------------------------------------------------------
+
+# Quality attributes
+
+There is always the temptation to read through a list of quality attributes and select an arbitrary number of properties you consider to be important.
+
+Don't treat quality attributes like your Christmas wishlist.
+
+If someone is holding a gun to your head, which is more important:
+
+* security or usability? (How much authentication will we do?)
+
+* flexibility or scalability? (Distributed Rackspace servers or not?)
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# Why can your project fail?
+
+# What are you going to do about it?
+
+--------------------------------------------------------------------------------
+
+# Meta-retrospective
+
+You now know all you need to know to self-organize your team and plan your software project.
+
+The Scrum/Agile approach is probably the most popular software development methodology at the moment.
+
+Does everyone agree that they work?
+
+--------------------------------------------------------------------------------
+
+# Bertrand Meyer
+
+## Agile! The Good, the Hype and the Ugly
+
+### E-book available in the library
+
+![left fit](img/03-meyer-agile.pdf)
+
+--------------------------------------------------------------------------------
+
+# Meyer: the bad and the ugly
+
+* Rejection of any upfront tasks
+
+* User stories of only requirements – resulting software may be hard to adapt and you might miss other important features.
+
+* Feature based development ignores foundation work
+
+--------------------------------------------------------------------------------
+
+# Meyer: the hyped
+
+* There is no credible evidence that pair programming works
+
+* Few teams are experienced enough to be self-organizing
+
+* Planning poker may drown the voice of the experts
+
+* Cross-functional teams ignore individuals
+
+--------------------------------------------------------------------------------
+
+# Meyer: the good & brilliant
+
+* Short daily meetings
+
+* Refactoring is important (but cannot replace design)
+
+* Continuous integration and regression testing
+
+* Short-time boxed iterations
+
+* Refining working software 
+
+--------------------------------------------------------------------------------
+
+# Erik Meijer
+
+#[Software is eating the world](https://vimeo.com/110554082)
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# Do you agree with Erik?
+
+--------------------------------------------------------------------------------
+
+![fit](img/question.jpg)
+
+# Rewatch his video after the project.
+
+# Do you still agree or disagree?
+
+--------------------------------------------------------------------------------
+
+# Homework - I
+
+* Identify the high-risk high-value stories.
+
+* What non-engineering risks can you identify? How will you handle them? Fill your product backlog accordingly.
+
+* What constraints can you identify?
+
+--------------------------------------------------------------------------------
+
+# Homework - II
+
+*  Look at the [lists of quality attributes](http://en.wikipedia.org/wiki/List_of_system_quality_attributes):   
+    * Which are crucial for your project?
+    * How big is the associated risk?
+    * What decisions need to be made to handle this risk?
+    * Which architectural patterns or tactics can help?
+    * Which other quality attributes may be negatively affected by these decisions? Is that a problem?
+
+--------------------------------------------------------------------------------
 

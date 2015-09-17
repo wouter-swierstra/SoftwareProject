@@ -344,7 +344,7 @@ There are three roles in the Scrum:
 
 --------------------------------------------------------------------------------
 
-![inline fill](img/01-agile.png)
+![inline fit](img/01-agile.png)
 
 --------------------------------------------------------------------------------
 
@@ -354,7 +354,6 @@ The Product Owner is a single person representing all stakeholders:
 
 - Helps prioritize the product backlog
 - Responsible for product vision
-- Prioritizes the Product Backlog
 - Accepts or rejects product increments
 
 
@@ -425,15 +424,13 @@ Daily meetings help coordinate developer activity.
 
 ![inline](img/01-taskboard.jpg)
 
-Or digitally using tools like [Trello](https://trello.com/)
-
 --------------------------------------------------------------------------------
 
 # The task board - I
 
 * When planning the sprint, every developer is assigned stories.
 
-* Each developer plans the implementation of this story, and splits this into small tasks.
+* Each developer plans the implementation of this story, and splits this into small *tasks*.
 
 * Each task goes on a post-it note.
 
@@ -479,6 +476,16 @@ Or digitally using tools like [Trello](https://trello.com/)
 * At the end of the iteration, everything is done.
 
 * The board is cleaned and a new iteration starts.
+
+--------------------------------------------------------------------------------
+
+# Product backlog, sprint backlog, task board
+
+- The *product backlog* records all future stories;
+
+- The *sprint backlog* lists thet stories for the current iteration;
+
+- The *task board* splits these stories into tasks and visualizes progress.
 
 --------------------------------------------------------------------------------
 
@@ -561,15 +568,18 @@ Lots of great free material online:
 
 --------------------------------------------------------------------------------
 
-##Planning & methodology may not be the biggest technical challenge in your project; but it has a **huge impact** on the final results.
+## Review
+
+The most important principles:
+
+* deliver working software incrementally;
+
+* work in iterations of two weeks;
+
+* review each iteration and discuss how to improve the process.
 
 --------------------------------------------------------------------------------
 
-# Scrum coaching
+##Planning & methodology may not be the biggest technical challenge in your project; but it has a **huge impact** on the final results.
 
-Friday February 13th, Max Verhorst (IT consultant and Scrum coach at InfoSupport) will visit the University.
 
-You will have an hour long session with him to present your project,
-product backlog, and plans.
-
-Please sign up for a slot!

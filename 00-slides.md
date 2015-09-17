@@ -121,6 +121,18 @@ The Scrum Master is responsible for making sure the process is smooth:
 - remove outside distractions;
 - chair review meetings or the daily standup;
 - facilitates the process, without being a a project *manager*.
+- (In the context of the Software Project), manages the product backlog
+
+--------------------------------------------------------------------------------
+
+# Coach
+
+The coach is not an offical part of the scrum, but in the context of the Software Project, we advise teams to appoint a coach:
+
+- monitors happiness of the team;
+- addresses any arguments;
+- ensures collaboration is smooth;
+- reports back to the supervisor about any problems.
 
 --------------------------------------------------------------------------------
 
@@ -133,7 +145,6 @@ The Scrum Master is responsible for making sure the process is smooth:
 
 --------------------------------------------------------------------------------
 
-
 # Where do you fit in?
 
 In the current situation, you hold weekly meetings.
@@ -143,7 +154,7 @@ In the current situation, you hold weekly meetings.
 
 By forcing students to a clearly defined process, we can improve supervision.
 
-I've asked students to use [EasyBacklog](www.easybacklog.com) organize their product backlog – you should have access too.
+We will ask students to use the same system (Gitlab, Github, or perhaps EasyBacklog) to manage their backlog. Be sure to request access.
 
 --------------------------------------------------------------------------------
 
@@ -157,7 +168,7 @@ Hold a bi-weekly meeting with the entire team to review the past sprint and plan
 
 * How did the client respond to the demo?
 
-Every other week, have a short meeting with the Scrum Master.
+Every other week, have a short meeting with the Scrum Master/Coach and another (rotating) team member.
 
 --------------------------------------------------------------------------------
 
@@ -239,6 +250,7 @@ One story point does not correspond to a fixed amount of work – instead they t
 
 Keep stories small – between one and ten points.
 
+The idea behind using story points is that it is impossible to estimate the amount of work on a software component that hasn't been developed, using unfamiliar technology, that relies on other components that haven't been written yet.
 
 --------------------------------------------------------------------------------
 
@@ -263,8 +275,6 @@ How often were their stories left unfinished?
 Were they identified as a bottleneck in the sprint reviews?
 
 --------------------------------------------------------------------------------
-
-
 
 # Questions?
 

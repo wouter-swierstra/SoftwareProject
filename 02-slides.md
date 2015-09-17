@@ -254,13 +254,39 @@ Your backlog can quickly become unmanageable
 
 You **must** be disciplined about controlling your backlog.
 
-There is a lot of software available to help:
-
-* [EasyBacklog](https://easybacklog.com) (recommended)
-
-* [GitHub issue tracker](http://www.position-absolute.com/articles/agile-workflow-with-github-issues/) or [Jira](http://blogs.atlassian.com/2013/04/how-to-manage-a-product-backlog-with-ease/)
+There is a lot of software available to help.
 
 Share your backlog with your UU supervisor; do *not* share it with your client.
+
+--------------------------------------------------------------------------------
+
+# Manage your backlog
+
+I **strongly** recommend using GitLab to host your repositories:
+
+Check out: [http://git.science.uu.nl](http://git.science.uu.nl)
+
+Just like GitHub, includes wiki, issue tracker, wiki, etc.
+
+Use the issue tracker to manage your product backlog.
+
+--------------------------------------------------------------------------------
+
+# Using the issue tracker
+
+* Record all user stories in the product backlog.
+
+* Tag issues as bugs, stories, epics, or admin (more on this later)
+
+* Tag issues as M,S,C or W.
+
+* Record story points and/or hours estimated (more on this later)
+
+* Create a new milestone for each iteration.
+
+--------------------------------------------------------------------------------
+
+# Quick issue tracker demo
 
 --------------------------------------------------------------------------------
 
@@ -499,7 +525,7 @@ All team members have a set of cards.
 
 Every team member chooses the card with the number of *story points*, estimating how much work a story will be.
 
-Every story point is 8 hours of work.
+Story points are a relative measure of time required.
 
 Unless there is a consensus, the people with the highest and lowest estimates motivate their choice.
 
@@ -509,21 +535,31 @@ Make new estimations until the team agrees.
 
 --------------------------------------------------------------------------------
 
-# What is the point of planning poker?
+# Why story points?
 
-![fit](img/question.jpg)
+When filling the product backlog initially, you'll need to estimate how much work stories may be.
+
+You have no idea – stories are vague and you may not have the expertise to make good estimates:
+
+* Set up database
+
+* Make prototype GUI
+
+* ...
 
 --------------------------------------------------------------------------------
 
-# Development velocity
+# Story points vs hours
 
-Measuring how many story points your team completes in an iteration, this gives you an indication of your *development velocity*.
+Instead of making a (bad) estimate of how much time you'll need for these stories, make a global estimate of where you expect most work to be.
 
-Use your development velocity when planning stories for the next iteration.
+Once you start planning the stories for the *sprint backlog*, revisit your estimates and assign a concrete number of hours to every story.
 
-Keep stories less than 10 story points.
+--------------------------------------------------------------------------------
 
-Don't bite off more than you can chew.
+# What is the point of planning poker?
+
+![fit](img/question.jpg)
 
 --------------------------------------------------------------------------------
 
@@ -569,42 +605,17 @@ Sometimes it can be helpful to establish a *user story map*.
 
 1. Create a (MoSCow) prioritized product backlog
 
-1. Set-up software to manage your backlog.
+1. Create a group on GitLab and create issues.
 
 1. Identify the key user stories.
 
-1. Organise the key stories into milestones.
+1. Organise the key stories in two milestones.
 
-1. Hold a [planning poker](http://wwwis.win.tue.nl/2R690/doc/agile_planning_poker.pdf) session to establish first sprint backlog. (You can print cards or [buy them online](http://speelkaartenshop.nl/planning-poker-kaarten/713-planning-pokerkaarten.html))
+1. Hold a planning poker session to establish first sprint backlog. Marjan has cards for each group.
 
-1. Start first iteration on Monday!
-
---------------------------------------------------------------------------------
-
-# Scrum Coaching
-
-Morgen met Max Verhorst in BBG 545
+1. Start first iteration next Monday!
 
 --------------------------------------------------------------------------------
-
-09-10 Politie
-
-10-11 Huisartsen
-
-11-12 eDLWO
-
-12-13 Power Saver Game
-
-13-14 NS
-
-14-15 Hijskraan
-
-15-16 Sandbox Architects
-
-16-17 Konekto
-
---------------------------------------------------------------------------------
-
 
 # Acknowledgements
 
