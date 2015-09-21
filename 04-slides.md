@@ -519,7 +519,7 @@ Does everyone agree that they work?
 
 * Rejection of any upfront tasks
 
-* User stories of only requirements – resulting software may be hard to adapt and you might miss other important features.
+* User stories are only form requirements – resulting software may be hard to adapt and you might miss other important features.
 
 * Feature based development ignores foundation work
 
