@@ -1,10 +1,11 @@
+% Software Project (Lecture 5): Building & Scripting
+% Wouter Swierstra, Atze Dijkstra
+% Feb 2016
+
+<!--
 footer: Software project – Lecture 5
 slidenumbers: true
-
-# Software Project
-### Lecture 5
-
-### Wouter Swierstra
+-->
 
 --------------------------------------------------------------------------------
 
@@ -78,7 +79,7 @@ Solution: only execute a step when something has changed:
 
 # The dependency graph
 
-![inline](img/05-dep-graph.pdf)
+![Dependency graph](img/05-dep-graph.pdf)
 
 --------------------------------------------------------------------------------
 
@@ -352,11 +353,13 @@ prog: main.o ../foo/libfoo.a
 
 `project/foo/Makefile`:
 
-![inline](img/05-recmake-I.pdf)
+![Build](img/05-recmake-I.pdf)
+
+--------------------------------------------------------------------------------
 
 `project/bar/Makefile`:
 
-![inline](img/05-recmake-II.pdf)
+![Build](img/05-recmake-II.pdf)
 
 --------------------------------------------------------------------------------
 
@@ -393,7 +396,7 @@ foo/libfoo.a: $(OBJS)
 
 # Non-recursive make (2)
 
-![inline](img/05-nonrecmake.pdf)
+![Build](img/05-nonrecmake.pdf)
 
 --------------------------------------------------------------------------------
 
@@ -533,7 +536,9 @@ These examples aren't difficult calculations or applications.
 
 The focus is on *convenience* and *automation*.
 
+<!--
 ^ For example, sending out the marks for MSO. Easy to do by hand; tedious.
+-->
 
 --------------------------------------------------------------------------------
 
@@ -693,6 +698,8 @@ Bash scripts, like Makefiles, can quickly become complex and hard to maintain.
 * There is very little type safety and almost no static checking – run it and hope for the best;
 
 * It is easy to delete, overwrite, or lose data.
+
+But still
 
 * It can be incredibly useful to automate mundane tasks.
 

@@ -3,16 +3,9 @@ PDFS			= $(patsubst %.md,%.pdf,$(SRCS))
 
 default: $(PDFS)
 
-#%.tex : %.md Makefile
-#	( echo '\\documentclass{beamer}' && \
-#	  echo '\\begin{document}' && \
-#	  pandoc --to=beamer $< && \
-#	  echo '\\end{document}' \
-#	) > $@
-#
 %.tex : %.md Makefile
-	pandoc -s --to=beamer $< > $@
+	pandoc -s --template=sp.beamer -V theme=Boadilla --to=beamer $< > $@
 
-%.pdf : %.tex
+%.pdf : %.tex Makefile
 	latexmk -pdf $<
 	

@@ -1,10 +1,11 @@
+% Software Project (Lecture 4): Git & Github
+% Wouter Swierstra, Atze Dijkstra
+% Feb 2016
+
+<!--
 footer: Software project – Lecture 4
 slidenumbers: true
-
-# Software Project
-### Lecture 4
-
-### Wouter Swierstra
+-->
 
 --------------------------------------------------------------------------------
 
@@ -15,6 +16,7 @@ slidenumbers: true
 * Risks
 
 * Software architecture
+
 
 --------------------------------------------------------------------------------
 
@@ -57,7 +59,7 @@ And need to give a demo at the end.
 
 * If you screw up, there is usually a way to undo your changes.
 
-^ StackOverflow!
+Use StackOverflow!
 
 --------------------------------------------------------------------------------
 
@@ -108,17 +110,12 @@ Git is a *distributed* version control system:
 
 # Git terminology
 
-![inline](img/04-git-terminology.png)
+![Picture from Scott Chacon's *Pro-Git*.](img/04-git-terminology.png)
 
-Picture from Scott Chacon's *Pro-Git*.
-
-^ Untracked -- not in the repository
-
-^ Unmodified -- tracked, but not modified
-
-^ Modified -- tracked and modified
-
-^ Staged -- modified and to be included in the next commit
+* Untracked -- not in the repository
+* Unmodified -- tracked, but not modified
+* Modified -- tracked and modified
+* Staged -- modified and to be included in the next commit
 
 --------------------------------------------------------------------------------
 
@@ -139,7 +136,7 @@ $ git status
 #   04-slides.md
 ```
 
-^ So we need to add 04-slides.md
+So we need to add 04-slides.md
 
 --------------------------------------------------------------------------------
 
@@ -313,9 +310,7 @@ You can add new changes to any specific branch, which may cause development line
 
 Branches may be *merged*, aggregating changes made in different development lines.
 
---------------------------------------------------------------------------------
-
-![100%](img/04-no-branch.png)
+![Branching](img/04-no-branch.png)
 
 --------------------------------------------------------------------------------
 
@@ -333,7 +328,7 @@ $ git branch
 ```
 --------------------------------------------------------------------------------
 
-![100%](img/04-create-branch.png)
+![Master and branch](img/04-create-branch.png)
 
 --------------------------------------------------------------------------------
 
@@ -348,7 +343,7 @@ $ git commit -am "Working on #53"
 --------------------------------------------------------------------------------
 
 
-![100%](img/04-branch-diverge.png)
+![Diverging branch](img/04-branch-diverge.png)
 
 --------------------------------------------------------------------------------
 
@@ -364,7 +359,7 @@ $ git commit -am "Hotfix in README.md"
 
 --------------------------------------------------------------------------------
 
-![100% inline](img/04-hotfix.png)
+![More branches](img/04-hotfix.png)
 
 How to get the changes to the `hotfix` branch back into `master`?
 
@@ -383,7 +378,7 @@ Fast-forward
 
 --------------------------------------------------------------------------------
 
-![90% inline](img/04-merged.png)
+![Fast forward merge](img/04-merged.png)
 
 From this point on, continue development in the `iss53` branch until it is ready to be merged with the master branch.
 
@@ -440,11 +435,13 @@ The code should be so good, that you'd be happy to release it, even if it lacks 
 
 # 2 – Only commit code that compiles
 
-![fit inline](img/04-andy.png)
+![Build break consequences](img/04-andy.png)
 
+<!--
 ^ Breaking the build blocks all other developers.
 
 ^ Shame on you!
+-->
 
 --------------------------------------------------------------------------------
 
@@ -488,11 +485,13 @@ If you choose to host your code on GitHub you have some additional features that
 
 # Github Demo
 
+<!--
 ^ Create branch
 
 ^ Create pull request
 
 ^ Discuss pull requests
+-->
 
 --------------------------------------------------------------------------------
 
@@ -521,6 +520,8 @@ There are plenty of alternatives:
 * BitBucket
 
 * GitLab
+
+* UU GitLab: `git.science.uu.nl` (and `git.science.uu.nl/help`), login with solis id
 
 --------------------------------------------------------------------------------
 
